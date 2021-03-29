@@ -1,0 +1,2240 @@
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['chatnox-append-chat-message'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n	<li class=\"chatnox-by-me\">\n							<!-- Use the class \"chatnox-pull-left\" in  -->\n							<div class=\"image-holder\" style=\"display: none;\">\n								<img src=\"";
+  if (stack1 = helpers.chatnox_visitor_image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.chatnox_visitor_image); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"\n									class=\"img-responsive\" />\n							</div>\n							<div class=\"chatnox-chat-content\" style=\"color: #737373;font-size: 12px;\">\n								<!-- In meta area, first include \"name\" and then \"time\" -->\n								<div class=\"chatnox-chat-meta\" style=\"font-size: 11px;font-weight: bold;text-transform: capitalize;\">\n									";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.chatnox_get_custom_message || (depth0 && depth0.chatnox_get_custom_message)),stack1 ? stack1.call(depth0, "visitor_name", "Me", options) : helperMissing.call(depth0, "chatnox_get_custom_message", "visitor_name", "Me", options)))
+    + " <span class=\"chatnox-pull-right chatnox-timeago\" rel=\"";
+  if (stack2 = helpers.time) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = (depth0 && depth0.time); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "\" style=\"font-size: 10px;font-weight: normal;\">";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.chatnox_time_ago || (depth0 && depth0.chatnox_time_ago)),stack1 ? stack1.call(depth0, (depth0 && depth0.time), options) : helperMissing.call(depth0, "chatnox_time_ago", (depth0 && depth0.time), options)))
+    + "</span>\n								</div>\n								";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.is_message_file_type || (depth0 && depth0.is_message_file_type)),stack1 ? stack1.call(depth0, (depth0 && depth0.message), options) : helperMissing.call(depth0, "is_message_file_type", (depth0 && depth0.message), options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n								<div class=\"chatnox-clearfix\"></div>\n							</div>\n						</li>\n						\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1, options;
+  buffer += "\n								    <div class=\"profile-line clearfix\">\n									    <img src=\"";
+  if (stack1 = helpers.chatnox_app_url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.chatnox_app_url); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "/site/img/file-icon.png\" style=\"float: left;max-width: 36px;margin-left:0px;\" />\n										<div class=\"text-14\">\n											<div style=\"text-transform: capitalize;padding-top: 5px;\"><a href=\"";
+  if (stack1 = helpers.path) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.path); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\" target=\"_blank\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.name); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</a></div>\n										</div>\n										<div class=\"text-muted\">\n										    	<small>size : ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.chatnox_format_bytes || (depth0 && depth0.chatnox_format_bytes)),stack1 ? stack1.call(depth0, (depth0 && depth0.size), options) : helperMissing.call(depth0, "chatnox_format_bytes", (depth0 && depth0.size), options)))
+    + "</small>\n										</div>\n									</div>\n								";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n								     ";
+  options = {hash:{},data:data};
+  stack2 = ((stack1 = helpers.chatnox_message || (depth0 && depth0.chatnox_message)),stack1 ? stack1.call(depth0, (depth0 && depth0.message), options) : helperMissing.call(depth0, "chatnox_message", (depth0 && depth0.message), options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n								";
+  return buffer;
+  }
+
+function program6(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n\n<!-- Chat by other. Use the class \"chatnox-by-other\". -->\n						<li class=\"chatnox-by-other\">\n							<!-- Use the class \"chatnox-pull-right\" in  -->\n							<div class=\"image-holder\" style=\"display: none;\">\n								<img src=\"";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.chatnox_agent_prefs || (depth0 && depth0.chatnox_agent_prefs)),stack1 ? stack1.call(depth0, "image_url", options) : helperMissing.call(depth0, "chatnox_agent_prefs", "image_url", options)))
+    + "\" />\n							</div>\n							<div class=\"chatnox-chat-content\" style=\"color: #737373;font-size: 12px;background-color: #fbfbfb;\">\n								<!-- In the chat meta, first include \"time\" then \"name\" -->\n								<div class=\"chatnox-chat-meta\" style=\"font-size: 11px;font-weight: bold;text-transform: capitalize;\">\n									<span class=\"\">";
+  options = {hash:{},data:data};
+  stack2 = ((stack1 = helpers.chatnox_agent_prefs || (depth0 && depth0.chatnox_agent_prefs)),stack1 ? stack1.call(depth0, "name", options) : helperMissing.call(depth0, "chatnox_agent_prefs", "name", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "</span> <span class=\"chatnox-pull-right chatnox-timeago\" rel=\"";
+  if (stack2 = helpers.time) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = (depth0 && depth0.time); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "\" style=\"font-size: 10px;font-weight: normal;\">";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.chatnox_time_ago || (depth0 && depth0.chatnox_time_ago)),stack1 ? stack1.call(depth0, (depth0 && depth0.time), options) : helperMissing.call(depth0, "chatnox_time_ago", (depth0 && depth0.time), options)))
+    + "</span> \n								</div>\n								";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.is_message_file_type || (depth0 && depth0.is_message_file_type)),stack1 ? stack1.call(depth0, (depth0 && depth0.message), options) : helperMissing.call(depth0, "is_message_file_type", (depth0 && depth0.message), options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n								<div class=\"chatnox-clearfix\"></div>\n							</div>\n						</li>\n						\n";
+  return buffer;
+  }
+
+  buffer += "<!-- Chat by us. Use the class \"chatnox-by-me\". -->\n";
+  options = {hash:{},inverse:self.program(6, program6, data),fn:self.program(1, program1, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.from), "VISITOR", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.from), "VISITOR", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  });
+templates['chatnox-bar'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var stack1, stack2;
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs), {hash:{},inverse:self.program(5, program5, data),fn:self.program(2, program2, data),data:data});
+  if(stack2 || stack2 === 0) { return stack2; }
+  else { return ''; }
+  }
+function program2(depth0,data) {
+  
+  var stack1, stack2;
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabber_animation), {hash:{},inverse:self.program(5, program5, data),fn:self.program(3, program3, data),data:data});
+  if(stack2 || stack2 === 0) { return stack2; }
+  else { return ''; }
+  }
+function program3(depth0,data) {
+  
+  var stack1;
+  return escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabber_animation)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1));
+  }
+
+function program5(depth0,data) {
+  
+  
+  return "bounce";
+  }
+
+function program7(depth0,data) {
+  
+  var stack1, stack2;
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs), {hash:{},inverse:self.program(5, program5, data),fn:self.program(8, program8, data),data:data});
+  if(stack2 || stack2 === 0) { return stack2; }
+  else { return ''; }
+  }
+function program8(depth0,data) {
+  
+  var stack1, stack2;
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabber_animation), {hash:{},inverse:self.program(5, program5, data),fn:self.program(9, program9, data),data:data});
+  if(stack2 || stack2 === 0) { return stack2; }
+  else { return ''; }
+  }
+function program9(depth0,data) {
+  
+  var stack1;
+  return escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabber_animation)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1));
+  }
+
+function program11(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n          ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs), {hash:{},inverse:self.noop,fn:self.program(12, program12, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n       ";
+  return buffer;
+  }
+function program12(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n               ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.hide_grabber), {hash:{},inverse:self.program(15, program15, data),fn:self.program(13, program13, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "       \n          ";
+  return buffer;
+  }
+function program13(depth0,data) {
+  
+  
+  return " ";
+  }
+
+function program15(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n                   ";
+  options = {hash:{},inverse:self.program(18, program18, data),fn:self.program(16, program16, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabber_type), "IMG", options) : helperMissing.call(depth0, "chatnox_equal", ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabber_type), "IMG", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n               ";
+  return buffer;
+  }
+function program16(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n                   <div style=\"text-align: "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.img_position)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.img_url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" width=\""
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.img_width)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "%\" style=\"display: inline;border: "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.img_border_width)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "px "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.img_border_color)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + " "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.img_border_type)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";\" /></div>\n                   ";
+  return buffer;
+  }
+
+function program18(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n                   <div class=\"chatnox-profile-line\" style=\"";
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.bg_color), {hash:{},inverse:self.noop,fn:self.program(19, program19, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.border_color), {hash:{},inverse:self.noop,fn:self.program(21, program21, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += ";max-width: 300px;\">\n     					<div class=\"chatnox-pull-left\">\n     						<img class=\"chatnox-img-circle\" src=\""
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.classic_img_url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" width=\"50px\">\n     					</div>\n     					<div style=\"overflow: hidden;\">\n     						<div style=\"margin-bottom: 5px;\"><strong style=\"color: "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.header_text_color)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";\">";
+  stack2 = ((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.header_text)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "</strong></div>\n     						<div class=\"chatnox-text-muted\"><small style=\"color: "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.body_text_color)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";\">";
+  stack2 = ((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.body_text)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "</small></div>\n     					</div>\n     				 </div>\n                   ";
+  return buffer;
+  }
+function program19(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "background-color: "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.bg_color)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";";
+  return buffer;
+  }
+
+function program21(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "border: 1px "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.border_type)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + " "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.border_color)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";";
+  return buffer;
+  }
+
+function program23(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n          ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs), {hash:{},inverse:self.noop,fn:self.program(24, program24, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n     ";
+  return buffer;
+  }
+function program24(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n              ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.hide_grabber), {hash:{},inverse:self.program(25, program25, data),fn:self.program(13, program13, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n          ";
+  return buffer;
+  }
+function program25(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n                    ";
+  options = {hash:{},inverse:self.program(28, program28, data),fn:self.program(26, program26, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabber_type), "IMG", options) : helperMissing.call(depth0, "chatnox_equal", ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabber_type), "IMG", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n              ";
+  return buffer;
+  }
+function program26(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n                    <div style=\"text-align: "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.img_position)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.img_url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" width=\""
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.img_width)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "%\" style=\"display: inline;border: "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.img_border_width)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "px "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.img_border_color)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + " "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.img_border_type)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";\" /></div>\n                    ";
+  return buffer;
+  }
+
+function program28(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n                     <div class=\"chatnox-profile-line\" style=\"";
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.bg_color), {hash:{},inverse:self.noop,fn:self.program(29, program29, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.border_color), {hash:{},inverse:self.noop,fn:self.program(31, program31, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += ";max-width: 300px;\">\n     					<div class=\"chatnox-pull-left\">\n     						<img class=\"chatnox-img-circle\" src=\""
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.classic_img_url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" width=\"50px\">\n     					</div>\n     					<div style=\"overflow: hidden;\">\n     						<div style=\"margin-bottom: 5px;\"><strong style=\"color: "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.header_text_color)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";\">";
+  stack2 = ((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.header_text)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "</strong></div>\n     						<div class=\"chatnox-text-muted\"><small style=\"color: "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.body_text_color)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";\">";
+  stack2 = ((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.body_text)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "</small></div>\n     					</div>\n     				 </div>               \n                   ";
+  return buffer;
+  }
+function program29(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "background-color: "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.bg_color)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";";
+  return buffer;
+  }
+
+function program31(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "border: 1px "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.border_type)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + " "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.border_color)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";";
+  return buffer;
+  }
+
+function program33(depth0,data) {
+  
+  var stack1;
+  return escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.chatBarPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.online_chat_bar_text)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1));
+  }
+
+function program35(depth0,data) {
+  
+  var stack1;
+  return escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.chatBarPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.offline_chat_bar_text)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1));
+  }
+
+function program37(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n          ";
+  options = {hash:{},inverse:self.program(41, program41, data),fn:self.program(38, program38, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.group_status), "offline", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.group_status), "offline", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n      ";
+  return buffer;
+  }
+function program38(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n                 ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.hide_bar_prefs)),stack1 == null || stack1 === false ? stack1 : stack1.hide_offline_chat_bar), {hash:{},inverse:self.noop,fn:self.program(39, program39, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n          ";
+  return buffer;
+  }
+function program39(depth0,data) {
+  
+  
+  return "display: none!important;";
+  }
+
+function program41(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n                 ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.hide_bar_prefs)),stack1 == null || stack1 === false ? stack1 : stack1.hide_online_chat_bar), {hash:{},inverse:self.noop,fn:self.program(39, program39, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n          ";
+  return buffer;
+  }
+
+function program43(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n         ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs), {hash:{},inverse:self.noop,fn:self.program(44, program44, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n      ";
+  return buffer;
+  }
+function program44(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    			border-top-color: "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.border_color)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";\n         ";
+  return buffer;
+  }
+
+function program46(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n         ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs), {hash:{},inverse:self.noop,fn:self.program(47, program47, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n     ";
+  return buffer;
+  }
+function program47(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    			border-top-color: "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.border_color)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";\n         ";
+  return buffer;
+  }
+
+function program49(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n         ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs), {hash:{},inverse:self.noop,fn:self.program(50, program50, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n      ";
+  return buffer;
+  }
+function program50(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    			border-top-color: "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.bg_color)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";\n         ";
+  return buffer;
+  }
+
+function program52(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n         ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs), {hash:{},inverse:self.noop,fn:self.program(53, program53, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n     ";
+  return buffer;
+  }
+function program53(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    			border-top-color: "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.grabberPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.bg_color)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";\n         ";
+  return buffer;
+  }
+
+function program55(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n      font-size: "
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.chatBarPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.chat_bar_font_size)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "px!important;\n      ";
+  return buffer;
+  }
+
+function program57(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n      	width: "
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.chatBarPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.chat_bar_font_size)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "px!important;\n      ";
+  return buffer;
+  }
+
+function program59(depth0,data) {
+  
+  
+  return "\n   		right: 0px !important;\n   		";
+  }
+
+function program61(depth0,data) {
+  
+  
+  return "\n   		left: 0px !important;\n   		";
+  }
+
+  buffer += "<!-- Bar -->\n<div id=\"chatnox-widget-bar\" style=\"min-width: 200px;\">\n\n<div class=\"chatnox-animated chatnox-";
+  options = {hash:{},inverse:self.program(7, program7, data),fn:self.program(1, program1, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.group_status), "online", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.group_status), "online", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\" id=\"chatnox-profile-line\" style=\"display: ";
+  if (stack2 = helpers.get_grabber_presence) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = (depth0 && depth0.get_grabber_presence); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
+  buffer += escapeExpression(stack2)
+    + ";margin-bottom: 2px;width: auto;\">\n     ";
+  options = {hash:{},inverse:self.program(23, program23, data),fn:self.program(11, program11, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.group_status), "offline", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.group_status), "offline", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n\n<a id=\"chatnox-grabber-close\" href=\"javascript:void(0)\" onclick=\"_ChatNox_Chat.remove_grabber(event);return false;\">x</a>\n     \n</div>\n\n<div class=\"chatnox-widget-head\">\n     <div class=\"chatnox-bar-left\">\n     <!-- <img src=\"https://www.chatnox.com/assets/bar-bubble.png\" style=\"width: 20px;\" /> --><i class=\"chatnoxicon-";
+  if (stack2 = helpers.group_status) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = (depth0 && depth0.group_status); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "-bubbles4\" style=\"display: none;\"></i>  \n     ";
+  options = {hash:{},inverse:self.program(35, program35, data),fn:self.program(33, program33, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.group_status), "online", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.group_status), "online", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "</div>\n</div>\n\n</div>\n\n<div id=\"chatnox-widget-container\" style=\"background: #fff;border-radius: 5px 5px 0px 0px;width: 290px;\">\n</div>\n<style type=\"text/css\">\n  \n  #chatnox-widget-bar {\n      ";
+  stack2 = helpers['if'].call(depth0, (depth0 && depth0.hide_bar_prefs), {hash:{},inverse:self.noop,fn:self.program(37, program37, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n      width: auto;\n  }\n\n.chatNox .chatnox-profile-line:before {\n	  ";
+  options = {hash:{},inverse:self.program(46, program46, data),fn:self.program(43, program43, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.group_status), "offline", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.group_status), "offline", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n	border-width: 16px 9px;\n	margin-left: -14px;\n}\n  .chatNox .chatnox-profile-line:after {\n     ";
+  options = {hash:{},inverse:self.program(52, program52, data),fn:self.program(49, program49, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.group_status), "offline", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.group_status), "offline", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n         \n   }\n      \n   .chatnox-widget-head {\n     background-color: "
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.themePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.widget_theme_color_code)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";\n	 border: 1px solid "
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.themePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.widget_theme_color_code)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";    \n   }\n   .chatnox-widget-head *{\n      color : "
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.themePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.chat_bar_text_color_code)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";\n   }\n   .chatnox-widget-head .chatnox-bar-left{\n      ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.chatBarPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.chat_bar_font_size), {hash:{},inverse:self.noop,fn:self.program(55, program55, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n      font-weight: bold!important;\n   }\n   .chatnox-widget-head .chatnox-bar-left i{\n      font-size: ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.chatnox_increase_val || (depth0 && depth0.chatnox_increase_val)),stack1 ? stack1.call(depth0, ((stack1 = (depth0 && depth0.chatBarPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.chat_bar_font_size), 1, options) : helperMissing.call(depth0, "chatnox_increase_val", ((stack1 = (depth0 && depth0.chatBarPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.chat_bar_font_size), 1, options)))
+    + "px!important;\n   }\n   .chatnox-widget-head .chatnox-bar-left img{\n       ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.chatBarPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.chat_bar_font_size), {hash:{},inverse:self.noop,fn:self.program(57, program57, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n      vertical-align: middle;\n	  display: inline;\n	  opacity: 1.0;\n   }\n   \n   .chatnox-minimized {\n   		left: auto !important;\n   		top: auto !important;\n   		bottom: 0px !important;\n   		";
+  options = {hash:{},inverse:self.program(61, program61, data),fn:self.program(59, program59, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, ((stack1 = (depth0 && depth0.chatBarPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.chat_window_position), "right", options) : helperMissing.call(depth0, "chatnox_equal", ((stack1 = (depth0 && depth0.chatBarPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.chat_window_position), "right", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n   }\n   \n    .chatnox-closed {\n   		left: auto !important;\n   		top: auto !important;\n   		bottom: 0px !important;\n   		";
+  options = {hash:{},inverse:self.program(61, program61, data),fn:self.program(59, program59, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, ((stack1 = (depth0 && depth0.chatBarPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.chat_window_position), "right", options) : helperMissing.call(depth0, "chatnox_equal", ((stack1 = (depth0 && depth0.chatBarPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.chat_window_position), "right", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n   }\n   \n   .chatnox-btn-default {\n     width : 100%;\n     background-color: "
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.themePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.widget_theme_color_code)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";\n	 border: 1px solid "
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.themePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.widget_theme_color_code)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";\n	 color : "
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.themePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.chat_bar_text_color_code)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "; \n  } \n  \n  .grabbable {\n    cursor: move;\n    cursor: grab;\n    cursor: -moz-grab;\n    cursor: -webkit-grab;\n  }\n\n  .grabbable:active { \n    cursor: grabbing;\n    cursor: -moz-grabbing;\n    cursor: -webkit-grabbing;\n }\n     \n</style>			";
+  return buffer;
+  });
+templates['chatnox-brand-container'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n	    Powered by <strong style=\"display: inline !important;background-color: #f9f9f9 !important;color: #b4b4b4!important;\">\n	    				<a href=\"";
+  if (stack1 = helpers['chatnox-ref-url']) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0['chatnox-ref-url']); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\" target=\"_blank\" style=\"display: inherit !important;background-color: #f9f9f9 !important;color: #555 !important;\">ChatNox</a>\n	    			</strong>\n	";
+  return buffer;
+  }
+
+function program3(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "    \n	    ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.whiteLabelPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.is_white_label_enabled), {hash:{},inverse:self.program(12, program12, data),fn:self.program(4, program4, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n	";
+  return buffer;
+  }
+function program4(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n	         ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.whiteLabelPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.hide_white_label), {hash:{},inverse:self.program(7, program7, data),fn:self.program(5, program5, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n	     ";
+  return buffer;
+  }
+function program5(depth0,data) {
+  
+  
+  return "\n	         ";
+  }
+
+function program7(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n	               ";
+  options = {hash:{},inverse:self.program(10, program10, data),fn:self.program(8, program8, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_contains_word || (depth0 && depth0.chatnox_contains_word)),stack1 ? stack1.call(depth0, ((stack1 = (depth0 && depth0.whiteLabelPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.company_name), "chatnox", options) : helperMissing.call(depth0, "chatnox_contains_word", ((stack1 = (depth0 && depth0.whiteLabelPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.company_name), "chatnox", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n	         	   <strong><a href=\"";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers['chatnox-ref-url'] || (depth0 && depth0['chatnox-ref-url'])),stack1 ? stack1.call(depth0, ((stack1 = (depth0 && depth0.whiteLabelPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.company_url), options) : helperMissing.call(depth0, "chatnox-ref-url", ((stack1 = (depth0 && depth0.whiteLabelPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.company_url), options)))
+    + "\" target=\"_blank\" >"
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.whiteLabelPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.company_name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a></strong>\n	         ";
+  return buffer;
+  }
+function program8(depth0,data) {
+  
+  
+  return "Powered by ";
+  }
+
+function program10(depth0,data) {
+  
+  
+  return " ";
+  }
+
+function program12(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n	        Powered by <strong><a href=\"";
+  if (stack1 = helpers['chatnox-ref-url']) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0['chatnox-ref-url']); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\" target=\"_blank\" >ChatNox</a></strong>\n	    ";
+  return buffer;
+  }
+
+  buffer += " <div class=\"chatnox-brand\" style=\"display: block !important;background-color: #f9f9f9 !important;color: #555 !important;\">\n	";
+  stack1 = helpers.unless.call(depth0, (depth0 && depth0.whiteLabelPrefs), {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n </div>		\n			";
+  return buffer;
+  });
+templates['chatnox-chat-button'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n	";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.chatButtonPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.hide_chat_button), {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  
+  return "\n	<div id=\"chatnox-live-chat-button-container\">\n	</div>\n	";
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n		<div id=\"chatnox-live-chat-button-container\" onclick=\"_ChatNox_Chat.show_window();\">\n			<img class=\"chatnox-live-chat-button\" src=\"";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.chatButtonPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.button_img_url), {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\">\n		</div>\n	";
+  return buffer;
+  }
+function program5(depth0,data) {
+  
+  var stack1;
+  return escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.chatButtonPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.button_img_url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1));
+  }
+
+function program7(depth0,data) {
+  
+  
+  return "\n	right: -2px !important;\n	";
+  }
+
+function program9(depth0,data) {
+  
+  
+  return "\n	left: -2px !important;\n	";
+  }
+
+function program11(depth0,data) {
+  
+  
+  return "\n	right: 0px !important;\n	";
+  }
+
+function program13(depth0,data) {
+  
+  
+  return "\n	left: 0px !important;\n	";
+  }
+
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.chatButtonPrefs), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "	\n\n<style type=\"text/css\">\nimg.chatnox-live-chat-button{\n	cursor: pointer;\n	top: 42% !important;\n	z-index: 10;\n	opacity: 1;\n    filter: alpha(opacity=40);\n	transition: opacity 173ms ease-out;\n	position: fixed !important;\n	";
+  options = {hash:{},inverse:self.program(9, program9, data),fn:self.program(7, program7, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, ((stack1 = (depth0 && depth0.chatButtonPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.button_position), "right", options) : helperMissing.call(depth0, "chatnox_equal", ((stack1 = (depth0 && depth0.chatButtonPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.button_position), "right", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n}\nimg.chatnox-live-chat-button:hover{\n	opacity: 0.7;\n    filter: alpha(opacity=100);\n    ";
+  options = {hash:{},inverse:self.program(13, program13, data),fn:self.program(11, program11, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, ((stack1 = (depth0 && depth0.chatButtonPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.button_position), "right", options) : helperMissing.call(depth0, "chatnox_equal", ((stack1 = (depth0 && depth0.chatButtonPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.button_position), "right", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n}\n</style>\n";
+  return buffer;
+  });
+templates['chatnox-chat-facebook-container'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, stack2, options, self=this, functionType="function", blockHelperMissing=helpers.blockHelperMissing, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+function program1(depth0,data) {
+  
+  
+  return "<div class=\"chatnox-table-cell\"><div class=\"chatnox-table\"><div class=\"chatnox-table-row\">";
+  }
+
+function program3(depth0,data) {
+  
+  
+  return "</div><div class=\"chatnox-table-row\">";
+  }
+
+function program5(depth0,data) {
+  
+  
+  return "</div></div></div>";
+  }
+
+  buffer += "<div id=\"chatnox-widget-chat-facebook-wrap\">\n		 ";
+  options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data};
+  if (stack1 = helpers.chatnox_is_window_popup) { stack1 = stack1.call(depth0, options); }
+  else { stack1 = (depth0 && depth0.chatnox_is_window_popup); stack1 = typeof stack1 === functionType ? stack1.call(depth0, options) : stack1; }
+  if (!helpers.chatnox_is_window_popup) { stack1 = blockHelperMissing.call(depth0, stack1, options); }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n			<div class=\"chatnox-widget-content\">\n				<div class=\"chatnox-widget-social-header\" id=\"chatnox-widget-social-header\">\n				     <a href=\"javascript: void(0);\" style=\"font-size: 11px;\" onclick=\"_ChatNox_Chat.back_to_chat();\">";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.chatnox_get_custom_message || (depth0 && depth0.chatnox_get_custom_message)),stack1 ? stack1.call(depth0, "back_to_chat", "Back to Live-Chat", options) : helperMissing.call(depth0, "chatnox_get_custom_message", "back_to_chat", "Back to Live-Chat", options)))
+    + "</a>\n				</div>\n				<div class=\"\" id=\"chatnox-widget-facebook-content\" style=\"height: 310px;overflow-y: auto;\">\n				</div>\n			</div>\n			";
+  options = {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data};
+  if (stack2 = helpers.chatnox_is_window_popup) { stack2 = stack2.call(depth0, options); }
+  else { stack2 = (depth0 && depth0.chatnox_is_window_popup); stack2 = typeof stack2 === functionType ? stack2.call(depth0, options) : stack2; }
+  if (!helpers.chatnox_is_window_popup) { stack2 = blockHelperMissing.call(depth0, stack2, options); }
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n			\n			<!-- Widget footer -->\n			<div class=\"chatnox-widget-foot\" style=\"display: block !important;background-color: #f9f9f9 !important;color: #555 !important;\">\n			   ";
+  if (stack2 = helpers.chatnox_brand_source) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = (depth0 && depth0.chatnox_brand_source); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n			</div>\n			<!-- End of Widget footer -->\n			\n			";
+  options = {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data};
+  if (stack2 = helpers.chatnox_is_window_popup) { stack2 = stack2.call(depth0, options); }
+  else { stack2 = (depth0 && depth0.chatnox_is_window_popup); stack2 = typeof stack2 === functionType ? stack2.call(depth0, options) : stack2; }
+  if (!helpers.chatnox_is_window_popup) { stack2 = blockHelperMissing.call(depth0, stack2, options); }
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>";
+  return buffer;
+  });
+templates['chatnox-chat-messages-container'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, stack2, options, self=this, functionType="function", blockHelperMissing=helpers.blockHelperMissing, escapeExpression=this.escapeExpression;
+
+function program1(depth0,data) {
+  
+  
+  return "<div class=\"chatnox-table-cell\"><div class=\"chatnox-table\"><div class=\"chatnox-table-row\">";
+  }
+
+function program3(depth0,data) {
+  
+  
+  return "</div><div class=\"chatnox-table-row\">";
+  }
+
+function program5(depth0,data) {
+  
+  
+  return "</div></div></div>";
+  }
+
+  buffer += "<div id=\"chatnox-widget-chat-wrap\">\n			";
+  options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data};
+  if (stack1 = helpers.chatnox_is_window_popup) { stack1 = stack1.call(depth0, options); }
+  else { stack1 = (depth0 && depth0.chatnox_is_window_popup); stack1 = typeof stack1 === functionType ? stack1.call(depth0, options) : stack1; }
+  if (!helpers.chatnox_is_window_popup) { stack1 = blockHelperMissing.call(depth0, stack1, options); }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n			<div class=\"chatnox-widget-content\" id=\"chatnox-widget-content\"\n				style=\"overflow-y: scroll; height: 275px;overflow-y: auto;\">\n				<!-- Widget content -->\n				<div class=\"chatnox-padd\" style=\"padding-left: 5px;padding-right: 5px;\">\n					<ul class=\"chatnox-chats\" id=\"chatnox-chats-container\" style=\"position: relative;padding-bottom: 10px;\">\n						\n					</ul>\n				</div>\n			</div>\n			\n			";
+  options = {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data};
+  if (stack1 = helpers.chatnox_is_window_popup) { stack1 = stack1.call(depth0, options); }
+  else { stack1 = (depth0 && depth0.chatnox_is_window_popup); stack1 = typeof stack1 === functionType ? stack1.call(depth0, options) : stack1; }
+  if (!helpers.chatnox_is_window_popup) { stack1 = blockHelperMissing.call(depth0, stack1, options); }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n			\n			<!-- Widget footer -->\n			<div class=\"chatnox-widget-foot\" style=\"display: block !important;background-color: #f9f9f9 !important;color: #555 !important;\">\n			   <textarea rows=\"2\" class=\"chatnox-form-control\"\n					id=\"chatnox-chat-message\" placeholder=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.msg_field_placeholder)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"\n					style=\"font-size: 13px;\" onfocus=\"_ChatNox_typing_pings.focused();\"></textarea>\n					\n			   ";
+  if (stack2 = helpers.chatnox_brand_source) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = (depth0 && depth0.chatnox_brand_source); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n			</div>\n			<!-- End of Widget footer -->\n			\n			";
+  options = {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data};
+  if (stack2 = helpers.chatnox_is_window_popup) { stack2 = stack2.call(depth0, options); }
+  else { stack2 = (depth0 && depth0.chatnox_is_window_popup); stack2 = typeof stack2 === functionType ? stack2.call(depth0, options) : stack2; }
+  if (!helpers.chatnox_is_window_popup) { stack2 = blockHelperMissing.call(depth0, stack2, options); }
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>";
+  return buffer;
+  });
+templates['chatnox-chat-social-container'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, stack2, options, self=this, functionType="function", blockHelperMissing=helpers.blockHelperMissing, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+function program1(depth0,data) {
+  
+  
+  return "<div class=\"chatnox-table-cell\"><div class=\"chatnox-table\"><div class=\"chatnox-table-row\">";
+  }
+
+function program3(depth0,data) {
+  
+  
+  return "</div><div class=\"chatnox-table-row\">";
+  }
+
+function program5(depth0,data) {
+  
+  
+  return "</div></div></div>";
+  }
+
+  buffer += "<div id=\"chatnox-widget-chat-social-wrap\">\n            ";
+  options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data};
+  if (stack1 = helpers.chatnox_is_window_popup) { stack1 = stack1.call(depth0, options); }
+  else { stack1 = (depth0 && depth0.chatnox_is_window_popup); stack1 = typeof stack1 === functionType ? stack1.call(depth0, options) : stack1; }
+  if (!helpers.chatnox_is_window_popup) { stack1 = blockHelperMissing.call(depth0, stack1, options); }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n			<div class=\"chatnox-widget-content\">\n				<div class=\"chatnox-widget-social-header\" id=\"chatnox-widget-social-header\">\n				     <a href=\"javascript: void(0);\" style=\"font-size: 11px;\" onclick=\"_ChatNox_Chat.back_to_chat();\">";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.chatnox_get_custom_message || (depth0 && depth0.chatnox_get_custom_message)),stack1 ? stack1.call(depth0, "back_to_chat", "Back to Live-Chat", options) : helperMissing.call(depth0, "chatnox_get_custom_message", "back_to_chat", "Back to Live-Chat", options)))
+    + "</a>\n				     <a href=\"https://twitter.com/"
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.socialPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.twitter_name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" class=\"twitter-follow-button\" data-show-count=\"false\" style=\"font-size: 11px;position: absolute; top: 2px;right: 10px;\">Follow @"
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.socialPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.twitter_name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a>\n				</div>\n				<div class=\"\" id=\"chatnox-widget-social-content\" style=\"overflow-y: scroll; height: 300px;overflow-y: auto;\">\n				</div>\n			</div>\n			";
+  options = {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data};
+  if (stack2 = helpers.chatnox_is_window_popup) { stack2 = stack2.call(depth0, options); }
+  else { stack2 = (depth0 && depth0.chatnox_is_window_popup); stack2 = typeof stack2 === functionType ? stack2.call(depth0, options) : stack2; }
+  if (!helpers.chatnox_is_window_popup) { stack2 = blockHelperMissing.call(depth0, stack2, options); }
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n			\n			<!-- Widget footer -->\n			<div class=\"chatnox-widget-foot\" style=\"display: block !important;background-color: #f9f9f9 !important;color: #555 !important;\">\n				 ";
+  if (stack2 = helpers.chatnox_brand_source) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = (depth0 && depth0.chatnox_brand_source); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n			</div>\n			";
+  options = {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data};
+  if (stack2 = helpers.chatnox_is_window_popup) { stack2 = stack2.call(depth0, options); }
+  else { stack2 = (depth0 && depth0.chatnox_is_window_popup); stack2 = typeof stack2 === functionType ? stack2.call(depth0, options) : stack2; }
+  if (!helpers.chatnox_is_window_popup) { stack2 = blockHelperMissing.call(depth0, stack2, options); }
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>";
+  return buffer;
+  });
+templates['chatnox-header-image'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, stack2, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, self=this, functionType="function", blockHelperMissing=helpers.blockHelperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n         ";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.twitter_token), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n         ";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.facebook_id), {hash:{},inverse:self.noop,fn:self.program(4, program4, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n         ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1, options;
+  buffer += "\n         <div class=\"chatnox-icons-twitter\" title=\"";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.chatnox_get_custom_message || (depth0 && depth0.chatnox_get_custom_message)),stack1 ? stack1.call(depth0, "twitter_tooltip", "Show Twitter Feed", options) : helperMissing.call(depth0, "chatnox_get_custom_message", "twitter_tooltip", "Show Twitter Feed", options)))
+    + "\" id=\"chatnox-widget-twitter-option\" style=\"margin-bottom: -1px;margin-top: 2px;margin-right: 5px;float: right;\"></div>\n         ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1, options;
+  buffer += "\n         <div class=\"chatnox-icons-facebook\" title=\"";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.chatnox_get_custom_message || (depth0 && depth0.chatnox_get_custom_message)),stack1 ? stack1.call(depth0, "facebook_tooltip", "Show Facebook Likes", options) : helperMissing.call(depth0, "chatnox_get_custom_message", "facebook_tooltip", "Show Facebook Likes", options)))
+    + "\" id=\"chatnox-widget-facebook-option\" style=\"margin-bottom: -1px;margin-top: 2px;margin-right: 5px;float: right;\"></div>\n         ";
+  return buffer;
+  }
+
+function program6(depth0,data) {
+  
+  var buffer = "", stack1, options;
+  buffer += "\n         	";
+  options = {hash:{},inverse:self.noop,fn:self.program(7, program7, data),data:data};
+  if (stack1 = helpers.is_rating_enabled) { stack1 = stack1.call(depth0, options); }
+  else { stack1 = (depth0 && depth0.is_rating_enabled); stack1 = typeof stack1 === functionType ? stack1.call(depth0, options) : stack1; }
+  if (!helpers.is_rating_enabled) { stack1 = blockHelperMissing.call(depth0, stack1, options); }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n	 	 ";
+  return buffer;
+  }
+function program7(depth0,data) {
+  
+  var buffer = "", stack1, options;
+  buffer += "\n		         <div class=\"chatnox-icons-options-like\" title=\"";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.chatnox_get_custom_message || (depth0 && depth0.chatnox_get_custom_message)),stack1 ? stack1.call(depth0, "rate_good_tooltip", "Rate chat as Good", options) : helperMissing.call(depth0, "chatnox_get_custom_message", "rate_good_tooltip", "Rate chat as Good", options)))
+    + "\" id=\"chatnox-widget-like-option\" rel=\"Good\" style=\"margin-bottom: -1px;margin-top: 2px;margin-right: 4px;\"></div>\n		         <div class=\"chatnox-icons-options-dislike\" title=\"";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.chatnox_get_custom_message || (depth0 && depth0.chatnox_get_custom_message)),stack1 ? stack1.call(depth0, "rate_bad_tooltip", "Rate chat as Bad", options) : helperMissing.call(depth0, "chatnox_get_custom_message", "rate_bad_tooltip", "Rate chat as Bad", options)))
+    + "\" id=\"chatnox-widget-dislike-option\" rel=\"Bad\" style=\"margin-bottom: -1px;margin-top: 2px;margin-right: 4px;\"></div>\n	        ";
+  return buffer;
+  }
+
+  buffer += "<!-- Widget title -->\n			<div class=\"chatnox-widget-content\" style=\"padding: 0px 0px 10px 10px;position: relative;\">\n				<div class=\"chatnox-pull-left\" style=\"position: absolute;top: -22px;margin-right: 10px;background: white;border-radius: 5px;-moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.2);-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.2);\">\n				      <img id=\"chatnox-company-image\" src=\"\" style=\"border-radius: 5px;width:50px;height: 50px;\"/>\n				</div>\n				<div class=\"\" style=\"padding-top: 5px;padding-left: 60px;\">\n				     <div style=\"display: block;\">\n     <div class=\"chatnox-miscllaneous-icons chatnox-btn-group chatnox-btn-group-vertical\" style=\"display: block;text-align: left!important;\">\n     	 <span class=\"chatnox-border-right\" style=\"float: right;padding-right: 5px;border: none;\" id=\"chatnox-widget-file-upload\" onclick=\"document.getElementById('chatnox_widget_file_attach').click();\">\n               <img src=\"";
+  if (stack1 = helpers.chatnox_app_url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.chatnox_app_url); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "/site/img/attach.png\" title=\"";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.chatnox_get_custom_message || (depth0 && depth0.chatnox_get_custom_message)),stack1 ? stack1.call(depth0, "file_attachments", "File Attachment", options) : helperMissing.call(depth0, "chatnox_get_custom_message", "file_attachments", "File Attachment", options)))
+    + "\" id=\"chatnox_widget_file_attach_icon\" style=\"cursor: pointer;display: none;position: relative;top: 2px;\">\n               <img style=\"display: none;position: relative;top: 2px;\" id=\"chatnox_widget_file_attach_loader\" src=\"";
+  if (stack2 = helpers.chatnox_app_url) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = (depth0 && depth0.chatnox_app_url); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "/site/img/loader.gif\">\n               <input type=\"file\" name=\"chatnox_cd_upload\" id=\"chatnox_widget_file_attach\" onchange=\"ChatNox_File_Attach.import_file(this, ChatNox_File_Attach.file_upload_success, ChatNox_File_Attach.file_upload_error);\" style=\"display: none;\"/>\n		 </span>\n		 \n         <div class=\"chatnox-icons-sound-";
+  if (stack2 = helpers.chatnox_sound_prefs) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = (depth0 && depth0.chatnox_sound_prefs); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "\" title=\"";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.chatnox_get_custom_message || (depth0 && depth0.chatnox_get_custom_message)),stack1 ? stack1.call(depth0, "message_alert_tooltip", "Sound on/off", options) : helperMissing.call(depth0, "chatnox_get_custom_message", "message_alert_tooltip", "Sound on/off", options)))
+    + "\" id=\"chatnox-widget-sound-option\" style=\"margin-bottom: -1px;margin-top: 2px;margin-right: 5px;float: right;\"></div>\n         ";
+  stack2 = helpers['with'].call(depth0, (depth0 && depth0.socialPrefs), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n         ";
+  options = {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data};
+  if (stack2 = helpers.is_status_online) { stack2 = stack2.call(depth0, options); }
+  else { stack2 = (depth0 && depth0.is_status_online); stack2 = typeof stack2 === functionType ? stack2.call(depth0, options) : stack2; }
+  if (!helpers.is_status_online) { stack2 = blockHelperMissing.call(depth0, stack2, options); }
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n	 	 \n	 </div>    \n</div>\n\n				</div>\n				<div class=\"chatnox-clearfix\"></div>\n			</div>\n";
+  return buffer;
+  });
+templates['chatnox-header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  buffer += "<!-- Widget title -->\n			<div id=\"chatnox-widget-head\" class=\"chatnox-widget-head\">\n				<div class=\"\" id=\"chatnox-window-title\" style=\"padding-left: 60px!important;padding-right: 30px!important;font-size: 13px!important;font-weight: bold!important;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;\">Live Chat</div>\n				<div class=\"chatnox-widget-icons\" style=\"position: absolute;top: 2px; right: 10px;\">\n					<a href=\"javascript:void(0)\" class=\"chatnox-minimize chatnox-window-controls\" id=\"chatnox-minimize\" title=\"";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.chatnox_get_custom_message || (depth0 && depth0.chatnox_get_custom_message)),stack1 ? stack1.call(depth0, "chat_minimize_tooltip", "Minimize window", options) : helperMissing.call(depth0, "chatnox_get_custom_message", "chat_minimize_tooltip", "Minimize window", options)))
+    + "\"></a> \n					<a href=\"javascript:void(0)\"\n						class=\"chatnox-close chatnox-window-controls\" id=\"chatnox-close\" title=\"";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.chatnox_get_custom_message || (depth0 && depth0.chatnox_get_custom_message)),stack1 ? stack1.call(depth0, "closed_chat_tooltip", "End Chat", options) : helperMissing.call(depth0, "chatnox_get_custom_message", "closed_chat_tooltip", "End Chat", options)))
+    + "\"></a>\n				</div>\n				<div class=\"chatnox-clearfix\"></div>\n			</div>";
+  return buffer;
+  });
+templates['chatnox-hide-bar'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, self=this;
+
+function program1(depth0,data) {
+  
+  
+  return "\n  #chatnox-widget-bar .chatnox-widget-head{\n      display: none!important;\n  }\n  ";
+  }
+
+function program3(depth0,data) {
+  
+  
+  return "\n#chatnox-widget-bar #chatnox-profile-line{\n     display: none!important;\n}\n";
+  }
+
+  buffer += "<style type=\"text/css\">\n ";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.hide_bar), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n  ";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.hide_grabber), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n</style>			";
+  return buffer;
+  });
+templates['chatnox-offline-form'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, stack2, options, self=this, functionType="function", escapeExpression=this.escapeExpression, blockHelperMissing=helpers.blockHelperMissing;
+
+function program1(depth0,data) {
+  
+  
+  return "<div class=\"chatnox-table-cell\"><div class=\"chatnox-table\"><div class=\"chatnox-table-row\">";
+  }
+
+function program3(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n				<div class=\"chatnox-form-group\">\n					<input type=\"";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.validate_name_field_as_email), {hash:{},inverse:self.program(6, program6, data),fn:self.program(4, program4, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\" class=\"chatnox-form-control\" id=\"chatnox-name\"\n						placeholder=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.name_field_placeholder)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.is_name_field_required), {hash:{},inverse:self.noop,fn:self.program(8, program8, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += " />\n				</div>\n				";
+  return buffer;
+  }
+function program4(depth0,data) {
+  
+  
+  return "email";
+  }
+
+function program6(depth0,data) {
+  
+  
+  return "text";
+  }
+
+function program8(depth0,data) {
+  
+  
+  return "required=\"true\"";
+  }
+
+function program10(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n				<div class=\"chatnox-form-group\">\n					<input type=\"";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.validate_email_field_as_email), {hash:{},inverse:self.program(6, program6, data),fn:self.program(4, program4, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\" class=\"chatnox-form-control\" id=\"chatnox-email\"\n						placeholder=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.email_field_placeholder)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.is_email_field_required), {hash:{},inverse:self.noop,fn:self.program(8, program8, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += " />\n				</div>\n				";
+  return buffer;
+  }
+
+function program12(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n				";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.show_custom_field), {hash:{},inverse:self.noop,fn:self.program(13, program13, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n				";
+  return buffer;
+  }
+function program13(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n				<div class=\"chatnox-form-group\">\n					<input type=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.custom_field_type)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" class=\"chatnox-form-control\" id=\"chatnox-custom\"\n						placeholder=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.custom_field_placeholder)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.is_custom_field_required), {hash:{},inverse:self.noop,fn:self.program(8, program8, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += " />\n				</div>\n				";
+  return buffer;
+  }
+
+function program15(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n				";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.show_custom_field_1), {hash:{},inverse:self.noop,fn:self.program(16, program16, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n				";
+  return buffer;
+  }
+function program16(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n				<div class=\"chatnox-form-group\">\n					<input type=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.custom_field_1_type)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" class=\"chatnox-form-control\" id=\"chatnox-custom-1\"\n						placeholder=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.custom_field_1_placeholder)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.is_custom_field_1_required), {hash:{},inverse:self.noop,fn:self.program(8, program8, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += " />\n				</div>\n				";
+  return buffer;
+  }
+
+function program18(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n				";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.show_custom_field_2), {hash:{},inverse:self.noop,fn:self.program(19, program19, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n				";
+  return buffer;
+  }
+function program19(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n				<div class=\"chatnox-form-group\">\n					<input type=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.custom_field_2_type)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" class=\"chatnox-form-control\" id=\"chatnox-custom-2\"\n						placeholder=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.custom_field_2_placeholder)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.is_custom_field_2_required), {hash:{},inverse:self.noop,fn:self.program(8, program8, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += " />\n				</div>\n				";
+  return buffer;
+  }
+
+function program21(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n					  <div class=\"chatnox-form-group\">\n				      <select id=\"offline-group-id\" class=\"chatnox-form-control\" required=true>\n				           <option value=\"\">";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.choose_group_text), {hash:{},inverse:self.program(24, program24, data),fn:self.program(22, program22, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "</option>\n					   ";
+  stack2 = helpers.each.call(depth0, (depth0 && depth0.groupList), {hash:{},inverse:self.noop,fn:self.program(26, program26, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n					  </select> \n					  </div>\n				";
+  return buffer;
+  }
+function program22(depth0,data) {
+  
+  var stack1;
+  return escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.choose_group_text)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1));
+  }
+
+function program24(depth0,data) {
+  
+  
+  return "Choose Department";
+  }
+
+function program26(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n					       <option value=\"";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.id); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.name); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</option>\n					   ";
+  return buffer;
+  }
+
+function program28(depth0,data) {
+  
+  
+  return "</div><div class=\"chatnox-table-row\">";
+  }
+
+function program30(depth0,data) {
+  
+  
+  return "</div></div></div>";
+  }
+
+  buffer += "<div id=\"chatnox-widget-offline-form\">\n         ";
+  options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data};
+  if (stack1 = helpers.chatnox_is_window_popup) { stack1 = stack1.call(depth0, options); }
+  else { stack1 = (depth0 && depth0.chatnox_is_window_popup); stack1 = typeof stack1 === functionType ? stack1.call(depth0, options) : stack1; }
+  if (!helpers.chatnox_is_window_popup) { stack1 = blockHelperMissing.call(depth0, stack1, options); }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n		    <div class=\"chatnox-widget-content chatnox-padd\">\n				<!-- Widget content -->\n				<div class=\"chatnox-padd\" style=\"padding: 0px 0px 15px;\">\n					<small>"
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.info_message)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</small>\n				</div>\n				";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.show_name_field), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n				";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.show_email_field), {hash:{},inverse:self.noop,fn:self.program(10, program10, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n				\n				<!-- Custom Fields -->\n				";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.show_custom_field_user), {hash:{},inverse:self.noop,fn:self.program(12, program12, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n				";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.show_custom_field_1_user), {hash:{},inverse:self.noop,fn:self.program(15, program15, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n				";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.show_custom_field_2_user), {hash:{},inverse:self.noop,fn:self.program(18, program18, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n				<!-- End of Custom Fields -->\n				\n				";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.groupList)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(21, program21, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n				\n				<div class=\"chatnox-form-group\">\n					<textarea rows=\"3\" class=\"chatnox-form-control\"\n						id=\"chatnox-offline-message\"\n						placeholder=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.msg_field_placeholder)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" required=true></textarea>\n				</div>\n			</div>\n			";
+  options = {hash:{},inverse:self.noop,fn:self.program(28, program28, data),data:data};
+  if (stack2 = helpers.chatnox_is_window_popup) { stack2 = stack2.call(depth0, options); }
+  else { stack2 = (depth0 && depth0.chatnox_is_window_popup); stack2 = typeof stack2 === functionType ? stack2.call(depth0, options) : stack2; }
+  if (!helpers.chatnox_is_window_popup) { stack2 = blockHelperMissing.call(depth0, stack2, options); }
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n			\n			<!-- Widget footer -->\n			<div class=\"chatnox-widget-foot\" style=\"display: block !important;background-color: #f9f9f9 !important;color: #555 !important;\">\n				<button type=\"submit\" class=\"chatnox-btn-default\"\n					style=\"border-color: #E0E4E8;\" id=\"chatnox-offline-submit\">"
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.offlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.initiate_button_text)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</button>\n					\n				 ";
+  if (stack2 = helpers.chatnox_brand_source) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = (depth0 && depth0.chatnox_brand_source); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "	\n			</div>\n			";
+  options = {hash:{},inverse:self.noop,fn:self.program(30, program30, data),data:data};
+  if (stack2 = helpers.chatnox_is_window_popup) { stack2 = stack2.call(depth0, options); }
+  else { stack2 = (depth0 && depth0.chatnox_is_window_popup); stack2 = typeof stack2 === functionType ? stack2.call(depth0, options) : stack2; }
+  if (!helpers.chatnox_is_window_popup) { stack2 = blockHelperMissing.call(depth0, stack2, options); }
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>";
+  return buffer;
+  });
+templates['chatnox-offline-success-holder'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "<div id=\"chatnox-widget-offline-success\">\n</div>";
+  });
+templates['chatnox-offline-success'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, stack2, options, self=this, functionType="function", blockHelperMissing=helpers.blockHelperMissing, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  
+  return "<div class=\"chatnox-table-cell\"><div class=\"chatnox-table\"><div class=\"chatnox-table-row\">";
+  }
+
+function program3(depth0,data) {
+  
+  
+  return "</div><div class=\"chatnox-table-row\">";
+  }
+
+function program5(depth0,data) {
+  
+  
+  return "</div></div></div>";
+  }
+
+  options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data};
+  if (stack1 = helpers.chatnox_is_window_popup) { stack1 = stack1.call(depth0, options); }
+  else { stack1 = (depth0 && depth0.chatnox_is_window_popup); stack1 = typeof stack1 === functionType ? stack1.call(depth0, options) : stack1; }
+  if (!helpers.chatnox_is_window_popup) { stack1 = blockHelperMissing.call(depth0, stack1, options); }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<div class=\"chatnox-widget-content chatnox-padd\">\n				<!-- Widget content -->\n				<div class=\"chatnox-padd\" style=\"padding: 0px 0px 15px;min-height:200px;\">\n				    ";
+  options = {hash:{},data:data};
+  stack2 = ((stack1 = helpers.chatnox_get_custom_message || (depth0 && depth0.chatnox_get_custom_message)),stack1 ? stack1.call(depth0, "offline_msg_success_reply", "Thanks,<br>We will get back to you shortly.", options) : helperMissing.call(depth0, "chatnox_get_custom_message", "offline_msg_success_reply", "Thanks,<br>We will get back to you shortly.", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n				</div>\n			</div>\n			";
+  options = {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data};
+  if (stack2 = helpers.chatnox_is_window_popup) { stack2 = stack2.call(depth0, options); }
+  else { stack2 = (depth0 && depth0.chatnox_is_window_popup); stack2 = typeof stack2 === functionType ? stack2.call(depth0, options) : stack2; }
+  if (!helpers.chatnox_is_window_popup) { stack2 = blockHelperMissing.call(depth0, stack2, options); }
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n			\n			<!-- Widget footer -->\n			<div class=\"chatnox-widget-foot\" style=\"display: block !important;background-color: #f9f9f9 !important;color: #555 !important;\">\n				";
+  if (stack2 = helpers.chatnox_brand_source) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = (depth0 && depth0.chatnox_brand_source); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "			\n			</div>\n";
+  options = {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data};
+  if (stack2 = helpers.chatnox_is_window_popup) { stack2 = stack2.call(depth0, options); }
+  else { stack2 = (depth0 && depth0.chatnox_is_window_popup); stack2 = typeof stack2 === functionType ? stack2.call(depth0, options) : stack2; }
+  if (!helpers.chatnox_is_window_popup) { stack2 = blockHelperMissing.call(depth0, stack2, options); }
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  return buffer;
+  });
+templates['chatnox-online-form'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, stack2, options, self=this, functionType="function", escapeExpression=this.escapeExpression, blockHelperMissing=helpers.blockHelperMissing;
+
+function program1(depth0,data) {
+  
+  
+  return "<div class=\"chatnox-table-cell\"><div class=\"chatnox-table\"><div class=\"chatnox-table-row\">";
+  }
+
+function program3(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n				   <div class=\"chatnox-form-group\">\n					<input type=\"";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.validate_name_field_as_email), {hash:{},inverse:self.program(6, program6, data),fn:self.program(4, program4, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\" class=\"chatnox-form-control\" id=\"chatnox-name\"\n						placeholder=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.name_field_placeholder)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.is_name_field_required), {hash:{},inverse:self.noop,fn:self.program(8, program8, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += " />\n				   </div>\n				";
+  return buffer;
+  }
+function program4(depth0,data) {
+  
+  
+  return "email";
+  }
+
+function program6(depth0,data) {
+  
+  
+  return "text";
+  }
+
+function program8(depth0,data) {
+  
+  
+  return "required=\"true\"";
+  }
+
+function program10(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n				<div class=\"chatnox-form-group\">\n					<input type=\"";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.validate_email_field_as_email), {hash:{},inverse:self.program(6, program6, data),fn:self.program(4, program4, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\" class=\"chatnox-form-control\" id=\"chatnox-email\"\n						placeholder=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.email_field_placeholder)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.is_email_field_required), {hash:{},inverse:self.noop,fn:self.program(8, program8, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += " />\n				</div>\n				";
+  return buffer;
+  }
+
+function program12(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n				";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.show_custom_field), {hash:{},inverse:self.noop,fn:self.program(13, program13, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n				";
+  return buffer;
+  }
+function program13(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n				<div class=\"chatnox-form-group\">\n					<input type=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.custom_field_type)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" class=\"chatnox-form-control\" id=\"chatnox-custom\"\n						placeholder=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.custom_field_placeholder)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.is_custom_field_required), {hash:{},inverse:self.noop,fn:self.program(8, program8, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += " />\n				</div>\n				";
+  return buffer;
+  }
+
+function program15(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n				";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.show_custom_field_1), {hash:{},inverse:self.noop,fn:self.program(16, program16, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n				";
+  return buffer;
+  }
+function program16(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n				<div class=\"chatnox-form-group\">\n					<input type=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.custom_field_1_type)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" class=\"chatnox-form-control\" id=\"chatnox-custom-1\"\n						placeholder=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.custom_field_1_placeholder)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.is_custom_field_1_required), {hash:{},inverse:self.noop,fn:self.program(8, program8, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += " />\n				</div>\n				";
+  return buffer;
+  }
+
+function program18(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n				";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.show_custom_field_2), {hash:{},inverse:self.noop,fn:self.program(19, program19, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n				";
+  return buffer;
+  }
+function program19(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n				<div class=\"chatnox-form-group\">\n					<input type=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.custom_field_2_type)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" class=\"chatnox-form-control\" id=\"chatnox-custom-2\"\n						placeholder=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.custom_field_2_placeholder)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.is_custom_field_2_required), {hash:{},inverse:self.noop,fn:self.program(8, program8, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += " />\n				</div>\n				";
+  return buffer;
+  }
+
+function program21(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n					  <div class=\"chatnox-form-group\">\n				      <select id=\"online-group-id\" class=\"chatnox-form-control\" required=true>\n				           <option value=\"\">";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.choose_group_text), {hash:{},inverse:self.program(24, program24, data),fn:self.program(22, program22, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "</option>\n					   ";
+  stack2 = helpers.each.call(depth0, (depth0 && depth0.groupList), {hash:{},inverse:self.noop,fn:self.program(26, program26, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n					  </select> \n					  </div>\n				";
+  return buffer;
+  }
+function program22(depth0,data) {
+  
+  var stack1;
+  return escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.choose_group_text)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1));
+  }
+
+function program24(depth0,data) {
+  
+  
+  return "Choose Department";
+  }
+
+function program26(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n					       <option value=\"";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.id); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.name); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</option>\n					   ";
+  return buffer;
+  }
+
+function program28(depth0,data) {
+  
+  
+  return "</div><div class=\"chatnox-table-row\">";
+  }
+
+function program30(depth0,data) {
+  
+  
+  return "</div></div></div>";
+  }
+
+  buffer += "<div id=\"chatnox-widget-online-form\">\n         ";
+  options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data};
+  if (stack1 = helpers.chatnox_is_window_popup) { stack1 = stack1.call(depth0, options); }
+  else { stack1 = (depth0 && depth0.chatnox_is_window_popup); stack1 = typeof stack1 === functionType ? stack1.call(depth0, options) : stack1; }
+  if (!helpers.chatnox_is_window_popup) { stack1 = blockHelperMissing.call(depth0, stack1, options); }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n		 <div class=\"chatnox-widget-content chatnox-padd\">\n				<!-- Widget content -->\n				<div class=\"chatnox-padd\" style=\"padding: 0px 0px 15px;\">\n					<small>";
+  stack2 = ((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.info_message)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "</small>\n				</div>\n				";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.show_name_field), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n				";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.show_email_field), {hash:{},inverse:self.noop,fn:self.program(10, program10, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n				\n				<!-- Custom Fields -->\n				";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.show_custom_field_user), {hash:{},inverse:self.noop,fn:self.program(12, program12, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n				\n				";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.show_custom_field_1_user), {hash:{},inverse:self.noop,fn:self.program(15, program15, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n				\n				";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.show_custom_field_2_user), {hash:{},inverse:self.noop,fn:self.program(18, program18, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n				<!-- End of Custom Fields -->\n				\n				";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.groupList)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(21, program21, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n				\n				<div class=\"chatnox-form-group\">\n					<textarea rows=\"3\" class=\"chatnox-form-control\"\n						id=\"chatnox-online-message\"\n						placeholder=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.msg_field_placeholder)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" required=true></textarea>\n				</div>\n			</div>\n			";
+  options = {hash:{},inverse:self.noop,fn:self.program(28, program28, data),data:data};
+  if (stack2 = helpers.chatnox_is_window_popup) { stack2 = stack2.call(depth0, options); }
+  else { stack2 = (depth0 && depth0.chatnox_is_window_popup); stack2 = typeof stack2 === functionType ? stack2.call(depth0, options) : stack2; }
+  if (!helpers.chatnox_is_window_popup) { stack2 = blockHelperMissing.call(depth0, stack2, options); }
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n			\n			<!-- Widget footer -->\n			<div class=\"chatnox-widget-foot\" style=\"display: block !important;background-color: #f9f9f9 !important;color: #555 !important;\">\n				<button type=\"submit\" class=\"chatnox-btn-default\"\n					style=\"border-color: #E0E4E8;\" id=\"chatnox-online-submit\">"
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.onlinePrefs)),stack1 == null || stack1 === false ? stack1 : stack1.initiate_button_text)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</button>\n				 ";
+  if (stack2 = helpers.chatnox_brand_source) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = (depth0 && depth0.chatnox_brand_source); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n			</div>\n			";
+  options = {hash:{},inverse:self.noop,fn:self.program(30, program30, data),data:data};
+  if (stack2 = helpers.chatnox_is_window_popup) { stack2 = stack2.call(depth0, options); }
+  else { stack2 = (depth0 && depth0.chatnox_is_window_popup); stack2 = typeof stack2 === functionType ? stack2.call(depth0, options) : stack2; }
+  if (!helpers.chatnox_is_window_popup) { stack2 = blockHelperMissing.call(depth0, stack2, options); }
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n			";
+  return buffer;
+  });
+templates['chatnox-system-message'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing;
+
+
+  buffer += "<li class=\"chatnox-by-me\">\n							<div class=\"chatnox-chat-content\" style=\"overflow: hidden;margin-left: 0px;font-size: 12px;\">\n								<!-- In meta area, first include \"name\" and then \"time\" -->\n								<div class=\"chatnox-chat-meta\">\n									<span class=\"chatnox-pull-right chatnox-timeago\" rel=\"";
+  if (stack1 = helpers.time) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.time); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.chatnox_time_ago || (depth0 && depth0.chatnox_time_ago)),stack1 ? stack1.call(depth0, (depth0 && depth0.time), options) : helperMissing.call(depth0, "chatnox_time_ago", (depth0 && depth0.time), options)))
+    + "</span>\n								</div>\n								";
+  options = {hash:{},data:data};
+  stack2 = ((stack1 = helpers.chatnox_message || (depth0 && depth0.chatnox_message)),stack1 ? stack1.call(depth0, (depth0 && depth0.message), options) : helperMissing.call(depth0, "chatnox_message", (depth0 && depth0.message), options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n								<div class=\"chatnox-clearfix\"></div>\n							</div>\n						</li>";
+  return buffer;
+  });
+templates['chatnox-theme-container'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "<!-- Widget Form -->\n	<div class=\"chatNox\">\n		<div class=\"chatnox-widget\" id=\"chatnox-widget\" style=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.chatBarPrefs)),stack1 == null || stack1 === false ? stack1 : stack1.chat_window_position)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ":0px;\">\n		</div>\n		<!-- End of Widget Form -->\n	</div>";
+  return buffer;
+  });
+templates['chatnox-typing-message'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, stack2, options, helperMissing=helpers.helperMissing, self=this, escapeExpression=this.escapeExpression;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n		   		";
+  options = {hash:{},data:data};
+  stack2 = ((stack1 = helpers.chatnox_agent_prefs || (depth0 && depth0.chatnox_agent_prefs)),stack1 ? stack1.call(depth0, "name", options) : helperMissing.call(depth0, "chatnox_agent_prefs", "name", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n		   ";
+  return buffer;
+  }
+
+function program3(depth0,data) {
+  
+  
+  return "\n		    	Operator\n		   ";
+  }
+
+  buffer += "<li class=\"chatnox-by-me chatnox-typing-alert\" style=\"position: absolute;bottom: -10px;width: 100%;padding: 2px 10px;\">\n	  <div class=\"chatnox-chat-content\" style=\"border: none!important;color: #aaa;padding: 0px;\">\n	  	   ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = (depth0 && depth0._ChatNox_session)),stack1 == null || stack1 === false ? stack1 : stack1.agent_json)),stack1 == null || stack1 === false ? stack1 : stack1.name), {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += " \n		   ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.chatnox_get_custom_message || (depth0 && depth0.chatnox_get_custom_message)),stack1 ? stack1.call(depth0, "tying_alert_to_visitor", "is typing...", options) : helperMissing.call(depth0, "chatnox_get_custom_message", "tying_alert_to_visitor", "is typing...", options)))
+    + " \n	       <div class=\"chatnox-clearfix\"></div>\n	  </div>\n</li>					";
+  return buffer;
+  });
+templates['chatnox-promotions-basic'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "width : ";
+  if (stack1 = helpers.width) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.width); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "px!important;";
+  return buffer;
+  }
+
+function program3(depth0,data) {
+  
+  
+  return "-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;";
+  }
+
+function program5(depth0,data) {
+  
+  
+  return "bottom: 10px!important;right: 10px!important;";
+  }
+
+function program7(depth0,data) {
+  
+  
+  return "bottom: 10px!important;right: auto!important;left: 10px!important;";
+  }
+
+function program9(depth0,data) {
+  
+  
+  return "top: 10px;bottom: auto!important;right: auto!important;left: 10px!important;";
+  }
+
+function program11(depth0,data) {
+  
+  
+  return "top: 10px;bottom: auto!important;right: 10px!important;left: auto!important;";
+  }
+
+  buffer += "<div class=\"chatNoxPromotions\" id=\"promotion-";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.id); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n		<div dir=\"ltr\" class=\"promotion-wrapper\">\n			<div class=\"promotion-container\" id=\"promotion-container-";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.id); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n				<a class=\"promotion-close\" data-id=\"";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.id); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><i class=\"promotion-icon-large\"></i>x</a>\n				<div class=\"promotion-body\" id=\"promotion-body-";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.id); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n				</div>\n				<div class=\"promotion-clearfix\"></div>\n			</div>\n		</div>\n</div>\n\n<style type=\"text/css\">\n\n   .chatNoxPromotions .promotion-container {\n        /*";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.width), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n        ";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.rounded_corners), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += " */\n   }\n   \n   .chatNoxPromotions .promotion-wrapper{\n  		position: fixed;\n        ";
+  options = {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.position), "bottom_right", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.position), "bottom_right", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n        ";
+  options = {hash:{},inverse:self.noop,fn:self.program(7, program7, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.position), "bottom_left", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.position), "bottom_left", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n        ";
+  options = {hash:{},inverse:self.noop,fn:self.program(9, program9, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.position), "top_left", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.position), "top_left", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n        ";
+  options = {hash:{},inverse:self.noop,fn:self.program(11, program11, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.position), "top_right", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.position), "top_right", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n   }\n   \n</style>";
+  return buffer;
+  });
+templates['chatnox-promotions-classic'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n				<div class=\"title-container\">\n					<span class=\"promotion-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.name); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n				</div>\n				";
+  return buffer;
+  }
+
+function program3(depth0,data) {
+  
+  
+  return " ";
+  }
+
+function program5(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n				<div class=\"promotion-calltoaction\">\n					";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.cta_text), {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n				</div>    \n				";
+  return buffer;
+  }
+function program6(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "<a href=\"";
+  if (stack1 = helpers.cta_url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.cta_url); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\" ";
+  options = {hash:{},inverse:self.program(7, program7, data),fn:self.program(3, program3, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.cta_target), "same_window", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.cta_target), "same_window", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += ">";
+  if (stack2 = helpers.cta_text) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = (depth0 && depth0.cta_text); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</a>";
+  return buffer;
+  }
+function program7(depth0,data) {
+  
+  
+  return "target=\"_blank\"";
+  }
+
+function program9(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n				<div class=\"promotion-clearfix\"></div>\n				<div class=\"promotion-calltoaction\">\n					";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.cta_text), {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n				</div>    \n				";
+  return buffer;
+  }
+
+function program11(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "width : ";
+  if (stack1 = helpers.width) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.width); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "px!important;";
+  return buffer;
+  }
+
+function program13(depth0,data) {
+  
+  
+  return "bottom: 0px!important;right: 10px!important;";
+  }
+
+function program15(depth0,data) {
+  
+  
+  return "bottom: 0px!important;right: auto!important;left: 10px!important;";
+  }
+
+function program17(depth0,data) {
+  
+  
+  return "float: left;margin-right: 10px;margin-top: 0px;";
+  }
+
+function program19(depth0,data) {
+  
+  
+  return "float: right;margin-left: 10px;margin-top: 0px;";
+  }
+
+  buffer += "<div class=\"chatNoxPromotions\" id=\"promotion-";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.id); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n		<div dir=\"ltr\" class=\"promotion-wrapper\">\n			<div class=\"promotion-container\">\n				<a class=\"promotion-close\" data-id=\"";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.id); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><i class=\"promotion-icon-large\"></i>x</a>\n				";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.display_title), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n				\n				";
+  options = {hash:{},inverse:self.program(5, program5, data),fn:self.program(3, program3, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.cta_position), "bottom", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.cta_position), "bottom", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n				\n				<div class=\"promotion-body\">";
+  if (stack2 = helpers.body) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = (depth0 && depth0.body); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "</div>\n				\n				";
+  options = {hash:{},inverse:self.noop,fn:self.program(9, program9, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.cta_position), "bottom", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.cta_position), "bottom", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n				<div class=\"promotion-clearfix\"></div>\n				<div class=\"promotion-powered-by\"\n					style=\"display: inline-block !important\">\n					<a target=\"_blank\" href=\"//chatnox.com\" title=\"Powered by ChatNox\">\n						Powered By ChatNox </a>\n				</div>\n				<div class=\"promotion-clearfix\"></div>\n			</div>\n		</div>\n</div>\n\n<style type=\"text/css\">\n   .chatNoxPromotions .promotion-container {\n        ";
+  stack2 = helpers['if'].call(depth0, (depth0 && depth0.width), {hash:{},inverse:self.noop,fn:self.program(11, program11, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n         -webkit-border-top-left-radius: 10px;-webkit-border-top-right-radius: 10px;\n        -moz-border-top-left-radius: 10px;-moz-border-top-right-radius: 10px;\n        border-top-left-radius: 10px;border-top-right-radius: 10px;\n        border-bottom : none;\n   }\n   .chatNoxPromotions .promotion-wrapper{\n        margin-bottom : 0px;position: fixed;\n        ";
+  options = {hash:{},inverse:self.noop,fn:self.program(13, program13, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.theme_position), "bottom_right", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.theme_position), "bottom_right", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n        ";
+  options = {hash:{},inverse:self.noop,fn:self.program(15, program15, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.theme_position), "bottom_left", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.theme_position), "bottom_left", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n   }\n   \n   .chatNoxPromotions .promotion-calltoaction{\n       ";
+  options = {hash:{},inverse:self.noop,fn:self.program(17, program17, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.cta_position), "left", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.cta_position), "left", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n       ";
+  options = {hash:{},inverse:self.noop,fn:self.program(19, program19, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.cta_position), "right", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.cta_position), "right", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n   }\n   .chatNoxPromotions .promotion-body{\n   }\n   \n   \n   \n</style>";
+  return buffer;
+  });
+templates['chatnox-promotions-modal'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  
+  return "#000";
+  }
+
+function program3(depth0,data) {
+  
+  
+  return "#fff";
+  }
+
+function program5(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "width : ";
+  if (stack1 = helpers.width) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.width); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "px!important;";
+  return buffer;
+  }
+
+function program7(depth0,data) {
+  
+  
+  return "-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;";
+  }
+
+  buffer += "<div class=\"chatNoxPromotions-modal-backdrop\"></div>\n<div class=\"chatNoxPromotions\" id=\"promotion-";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.id); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n<div class=\"chatNoxPromotions-modal-overlay\" data-id=\"";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.id); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n		<div dir=\"ltr\" class=\"promotion-wrapper\" id=\"promotion-wrapper-";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.id); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n			<div class=\"promotion-container\" id=\"promotion-container-";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.id); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n				<a class=\"promotion-close\" data-id=\"";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.id); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><i class=\"promotion-icon-large\"></i>x</a>\n				<div class=\"promotion-body\" id=\"promotion-body-";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.id); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n				</div>\n				<div class=\"promotion-clearfix\"></div>\n			</div>\n		</div>\n</div>\n</div>\n\n<style type=\"text/css\">\n\n  .chatNoxPromotions-modal-backdrop{\n    height: 100%;width: 100%;opacity: 0.9;filter: alpha(opacity=90);background-color: ";
+  options = {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.modal_background), "black", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.modal_background), "black", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += ";\n    position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: 10000;\n   }\n   .chatNoxPromotions .chatNoxPromotions-modal-overlay{\n       height: 100%;width: 100%;top: 0;left: 0;position: fixed;z-index: 100000;\n   }\n   .chatNoxPromotions .promotion-container {\n        ";
+  stack2 = helpers['if'].call(depth0, (depth0 && depth0.width), {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n        ";
+  stack2 = helpers['if'].call(depth0, (depth0 && depth0.rounded_corners), {hash:{},inverse:self.noop,fn:self.program(7, program7, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n   }\n   .chatNoxPromotions .promotion-wrapper{\n       position: fixed!important;margin: 10% auto;";
+  stack2 = helpers['if'].call(depth0, (depth0 && depth0.width), {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n   }\n  \n</style>\n";
+  return buffer;
+  });
+templates['chatnox-promotions-powered-by'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "<div id='chatnox-crm-popup-copyright'><a rel='nofollow' href='https://www.chatnox.com/features/instant-discount-popup-features.html?utm_source=ChatNox-InstaPop&utm_medium=marketing&utm_campaign=Viral' target='_blank'>powered by ChatNox</a></div>";
+  });
+templates['chatnox-promotions-sticky footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "<a href=\"";
+  if (stack1 = helpers.cta_url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.cta_url); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\" ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.cta_target), "same_window", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.cta_target), "same_window", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += " style=\"padding: 3px 10px;\">";
+  if (stack2 = helpers.cta_text) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = (depth0 && depth0.cta_text); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</a>";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  
+  return " ";
+  }
+
+function program4(depth0,data) {
+  
+  
+  return "target=\"_blank\"";
+  }
+
+function program6(depth0,data) {
+  
+  
+  return "float: left;margin-right: 10px;margin-top: 0px;";
+  }
+
+function program8(depth0,data) {
+  
+  
+  return "float: right;margin-left: 10px;margin-top: 0px;";
+  }
+
+  buffer += "<div class=\"chatNoxPromotions\" id=\"promotion-";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.id); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n		<div dir=\"ltr\" class=\"promotion-wrapper\">\n			<div class=\"promotion-container\">\n			   <div class=\"promotion-sticky-container\">\n				<div class=\"promotion-body\" style=\"display: inline-block;\">";
+  if (stack1 = helpers.body) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.body); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</div>\n			    <div class=\"promotion-calltoaction\" style=\"display: inline;vertical-align: super;\">\n					";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.cta_text), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n				</div>\n			 </div>\n			</div>\n		</div>\n</div>\n\n<style type=\"text/css\">\n   .chatNoxPromotions .promotion-container {padding: 0px;background-repeat: no-repeat;border: 2px solid #FFFFFF;border-bottom-width: 0;border-left-width: 0;border-right-width: 0;}\n   .chatNoxPromotions .promotion-sticky-container {\n        margin-left: 39px;\n        border-left: 1px solid #ffffff;\n        margin-right: 50px;\n		overflow: hidden;\n		padding-left: 10px;\n		padding-right: 10px;\n		height: 70px;max-height: 70px;\n		text-align: ";
+  if (stack1 = helpers.sticky_header_content_alignment) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.sticky_header_content_alignment); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + ";\n   }\n   .chatNoxPromotions .promotion-wrapper{\n        margin : 0px;padding: 0px;display: block;width: 100%;z-index: 1000;overflow: hidden;white-space: nowrap;\n        top: auto; left: 0px; right: 0px;bottom: 0px;position: fixed!important;\n   }\n   \n   .chatNoxPromotions .promotion-calltoaction{\n       ";
+  options = {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.cta_position), "left", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.cta_position), "left", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n       ";
+  options = {hash:{},inverse:self.noop,fn:self.program(8, program8, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.cta_position), "right", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.cta_position), "right", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n   }\n   .chatNoxPromotions .promotion-body{\n      overflow: hidden;white-space: nowrap;line-height: inherit;font-size: 1em;\n   }\n   \n   \n   \n</style>";
+  return buffer;
+  });
+templates['chatnox-promotions-sticky header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "<a href=\"";
+  if (stack1 = helpers.cta_url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.cta_url); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\" ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.cta_target), "same_window", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.cta_target), "same_window", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += " style=\"padding: 3px 10px;\">";
+  if (stack2 = helpers.cta_text) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = (depth0 && depth0.cta_text); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</a>";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  
+  return " ";
+  }
+
+function program4(depth0,data) {
+  
+  
+  return "target=\"_blank\"";
+  }
+
+function program6(depth0,data) {
+  
+  
+  return "position: fixed!important;";
+  }
+
+function program8(depth0,data) {
+  
+  
+  return "float: left;margin-right: 10px;margin-top: 0px;";
+  }
+
+function program10(depth0,data) {
+  
+  
+  return "float: right;margin-left: 10px;margin-top: 0px;";
+  }
+
+  buffer += "<div class=\"chatNoxPromotions\" id=\"promotion-";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.id); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n		<div dir=\"ltr\" class=\"promotion-wrapper\">\n			<div class=\"promotion-container\">\n			   <div class=\"promotion-sticky-container\">\n				<div class=\"promotion-body\" style=\"display: inline-block;\">";
+  if (stack1 = helpers.body) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.body); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</div>\n			    <div class=\"promotion-calltoaction\" style=\"display: inline;vertical-align: super;\">\n					";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.cta_text), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n				</div>\n			 </div>\n			</div>\n		</div>\n</div>\n\n<style type=\"text/css\">\n   .chatNoxPromotions .promotion-container {padding: 0px;background-repeat: no-repeat;border: 2px solid #FFFFFF;border-top-width: 0;border-left-width: 0;border-right-width: 0;}\n   .chatNoxPromotions .promotion-sticky-container {\n        margin-left: 39px;\n        border-left: 1px solid #ffffff;\n        margin-right: 50px;\n		overflow: hidden;\n		padding-left: 10px;\n		padding-right: 10px;\n		height: 38px;\n		text-align: ";
+  if (stack1 = helpers.sticky_header_content_alignment) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.sticky_header_content_alignment); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + ";\n   }\n   .chatNoxPromotions .promotion-wrapper{\n        margin : 0px;padding: 0px;display: block;width: 100%;z-index: 1000;overflow: hidden;white-space: nowrap;\n        top: 0px; left: 0px; right: 0px;\n        ";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.sticky_header_fixed), {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n        ";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.sticky_header_push_down), {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n   }\n   \n   .chatNoxPromotions .promotion-calltoaction{\n       ";
+  options = {hash:{},inverse:self.noop,fn:self.program(8, program8, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.cta_position), "left", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.cta_position), "left", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n       ";
+  options = {hash:{},inverse:self.noop,fn:self.program(10, program10, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.cta_position), "right", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.cta_position), "right", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n   }\n   .chatNoxPromotions .promotion-body{\n      overflow: hidden;white-space: nowrap;line-height: inherit;font-size: 1em;\n   }\n   \n   \n   \n</style>";
+  return buffer;
+  });
+templates['chatnox-promotions-theme-css'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, stack2, options, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  
+  return "\n.chatNoxPromotions .promotion-close {\n       color: #FBEBFB;\n       background-color: #9933CC;\n	   border-color: #9933CC;\n}\n.chatNoxPromotions .promotion-close:hover {\nbackground-color: #7f19b2;\ncolor: #e1d1e1;\ntext-shadow: 1px 1px #8c26bf;\n}\n\n.chatNoxPromotions .promotion-title {\n     color: #9933CC;\n     text-shadow: 1px 1px #fff8ff;\n}\n.chatNoxPromotions .promotion-container {\n   background-color: #FBEBFB;\nborder-color: #9933CC!important;\n}\n.chatNoxPromotions .promotion-body, .promotion-body * {\n color: #666666;\n}\n\n\n.chatNoxPromotions .promotion-calltoaction a {\n text-shadow: 0 1px 0 #9933CC;\nbackground-color: #9933CC;\ncolor: #ffffff;\nborder-color: #660099;\nbackground-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #b34de6), color-stop(100%, #7f19b2));\nbackground-image: -webkit-linear-gradient(top, #b34de6, #7f19b2);\nbackground-image: -moz-linear-gradient(top, #b34de6, #7f19b2);\nbackground-image: -ms-linear-gradient(top, #b34de6, #7f19b2);\nbackground-image: -o-linear-gradient(top, #b34de6, #7f19b2);\nbackground-image: linear-gradient(top, #b34de6, #7f19b2);\n}\n\n.chatNoxPromotions .promotion-calltoaction a:hover, .chatNoxPromotions .promotion-calltoaction a:active {\ntext-shadow: 0 1px 0 #7f19b2;\nborder-color: #4c007f;\nbackground-color: #7f19b2;\nbackground-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #b34de6), color-stop(100%, #660099));\nbackground-image: -webkit-linear-gradient(top, #b34de6, #660099);\nbackground-image: -moz-linear-gradient(top, #b34de6, #660099);\nbackground-image: -ms-linear-gradient(top, #b34de6, #660099);\nbackground-image: -o-linear-gradient(top, #b34de6, #660099);\nbackground-image: linear-gradient(top, #b34de6, #660099);\n}\n\n";
+  }
+
+function program3(depth0,data) {
+  
+  
+  return "\n\n.chatNoxPromotions .promotion-close {\nbackground-color: #006699;\ncolor: #EDF4FF;\ntext-shadow: 1px 1px #0d73a6;\nborder-color: #0066ff;\n}\n.chatNoxPromotions .promotion-close:hover {\n	  background-color: #004c7f;\ncolor: #d3dae5;\ntext-shadow: 1px 1px #0d598c;\n}\n.chatNoxPromotions .promotion-title {\n    color: #006699;\n    text-shadow: 1px 1px #faffff;\n}\n.chatNoxPromotions .promotion-container {\n   background-color: #EDF4FF;\nborder-color: #0066ff!important;\n}\n\n.chatNoxPromotions .promotion-body, .promotion-body * {\n color: #666666;\n}\n\n.chatNoxPromotions .promotion-calltoaction a {\ncolor: #ffffff;\ntext-shadow: 0 1px 0 #006699;\nborder-color: #003366;\nbackground-color: #006699;\nbackground-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1a80b3), color-stop(100%, #004c7f));\nbackground-image: -webkit-linear-gradient(top, #1a80b3, #004c7f);\nbackground-image: -moz-linear-gradient(top, #1a80b3, #004c7f);\nbackground-image: -ms-linear-gradient(top, #1a80b3, #004c7f);\nbackground-image: -o-linear-gradient(top, #1a80b3, #004c7f);\nbackground-image: linear-gradient(top, #1a80b3, #004c7f);\n}\n\n.chatNoxPromotions .promotion-calltoaction a:hover, .chatNoxPromotions .promotion-calltoaction a:active {\ntext-shadow: 0 1px 0 #004c7f;\nborder-color: #00194c;\nbackground-color: #004c7f;\nbackground-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1a80b3), color-stop(100%, #003366));\nbackground-image: -webkit-linear-gradient(top, #1a80b3, #003366);\nbackground-image: -moz-linear-gradient(top, #1a80b3, #003366);\nbackground-image: -ms-linear-gradient(top, #1a80b3, #003366);\nbackground-image: -o-linear-gradient(top, #1a80b3, #003366);\nbackground-image: linear-gradient(top, #1a80b3, #003366);\n}\n\n";
+  }
+
+function program5(depth0,data) {
+  
+  
+  return "\n\n.chatNoxPromotions .promotion-close {\n	  background-color: #222222;\ncolor: #f5f5f5;\ntext-shadow: 1px 1px #2f2f2f;\nborder-color: #666666;\n}\n.chatNoxPromotions .promotion-close:hover {\nbackground-color: #080808;\ncolor: #dbdbdb;\ntext-shadow: 1px 1px #151515;\n}\n.chatNoxPromotions .promotion-title {\n     color: #222222;\n     text-shadow: 1px 1px #ffffff;\n}\n.chatNoxPromotions .promotion-container {\n   background-color: #f5f5f5;\n   border-color: #666666!important;\n}\n\n.chatNoxPromotions .promotion-body, .promotion-body * {\n color: #666666;\n}\n\n.chatNoxPromotions .promotion-calltoaction a {\ncolor: #ffffff;\ntext-shadow: 0 1px 0 #1193ba;\nborder-color: #006087;\nbackground-color: #1193ba;\nbackground-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2badd4), color-stop(100%, #0079a0));\nbackground-image: -webkit-linear-gradient(top, #2badd4, #0079a0);\nbackground-image: -moz-linear-gradient(top, #2badd4, #0079a0);\nbackground-image: -ms-linear-gradient(top, #2badd4, #0079a0);\nbackground-image: -o-linear-gradient(top, #2badd4, #0079a0);\nbackground-image: linear-gradient(top, #2badd4, #0079a0);\n}\n\n.chatNoxPromotions .promotion-calltoaction a:hover, .chatNoxPromotions .promotion-calltoaction a:active {\ntext-shadow: 0 1px 0 #0079a0;\nborder-color: #00466d;\nbackground-color: #0079a0;\nbackground-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2badd4), color-stop(100%, #006087));\nbackground-image: -webkit-linear-gradient(top, #2badd4, #006087);\nbackground-image: -moz-linear-gradient(top, #2badd4, #006087);\nbackground-image: -ms-linear-gradient(top, #2badd4, #006087);\nbackground-image: -o-linear-gradient(top, #2badd4, #006087);\nbackground-image: linear-gradient(top, #2badd4, #006087);\n}\n\n";
+  }
+
+function program7(depth0,data) {
+  
+  
+  return "\n\n.chatNoxPromotions .promotion-close {\n	 background-color: #bf2004;\ncolor: #f9f9f9;\ntext-shadow: 1px 1px #cc2d11;\nborder-color: #444444!important;\n}\n.chatNoxPromotions .promotion-close:hover {\nbackground-color: #a50600;\ncolor: #dfdfdf;\ntext-shadow: 1px 1px #b2130d;\n}\n.chatNoxPromotions .promotion-title {\n     color: #bf2004;\n     text-shadow: 1px 1px #ffffff;\n}\n.chatNoxPromotions .promotion-container {\n  background-color: #f9f9f9;\nborder-color: #444444!important;\n}\n\n.chatNoxPromotions .promotion-body, .promotion-body * {\n color: #555555;\n}\n\n\n.chatNoxPromotions .promotion-calltoaction a {\ncolor: #ffffff;\ntext-shadow: 0 1px 0 #bf2004;\nborder-color: #8c0000;\nbackground-color: #bf2004;\nbackground-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d93a1e), color-stop(100%, #a50600));\nbackground-image: -webkit-linear-gradient(top, #d93a1e, #a50600);\nbackground-image: -moz-linear-gradient(top, #d93a1e, #a50600);\nbackground-image: -ms-linear-gradient(top, #d93a1e, #a50600);\nbackground-image: -o-linear-gradient(top, #d93a1e, #a50600);\nbackground-image: linear-gradient(top, #d93a1e, #a50600);\n}\n\n.chatNoxPromotions .promotion-calltoaction a:hover, .chatNoxPromotions .promotion-calltoaction a:active {\ntext-shadow: 0 1px 0 #a50600;\nborder-color: #720000;\nbackground-color: #a50600;\nbackground-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d93a1e), color-stop(100%, #8c0000));\nbackground-image: -webkit-linear-gradient(top, #d93a1e, #8c0000);\nbackground-image: -moz-linear-gradient(top, #d93a1e, #8c0000);\nbackground-image: -ms-linear-gradient(top, #d93a1e, #8c0000);\nbackground-image: -o-linear-gradient(top, #d93a1e, #8c0000);\nbackground-image: linear-gradient(top, #d93a1e, #8c0000);\n}\n\n";
+  }
+
+function program9(depth0,data) {
+  
+  
+  return "\n\n.chatNoxPromotions .promotion-close {\n	 background-color: #2d3138;\ncolor: #ffffaa;\ntext-shadow: 1px 1px #3a3e45;\nborder-color: #030303;\n}\n.chatNoxPromotions .promotion-close:hover {\nbackground-color: #13171e;\ncolor: #e5e590;\ntext-shadow: 1px 1px #20242b;\n}\n.chatNoxPromotions .promotion-title {\n     color: #2d3138;\ntext-shadow: 1px 1px #ffffb7\n}\n.chatNoxPromotions .promotion-container {\n  background-color: #ffffaa;\nborder-color: #030303!important;\n}\n.chatNoxPromotions .promotion-body, .promotion-body * {\n color: #333333;\n}\n\n.chatNoxPromotions .promotion-calltoaction a {\ncolor: #ffffff;\ntext-shadow: 0 1px 0 #085d96;\nborder-color: #002a63;\nbackground-color: #085d96;\nbackground-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2277b0), color-stop(100%, #00437c));\nbackground-image: -webkit-linear-gradient(top, #2277b0, #00437c);\nbackground-image: -moz-linear-gradient(top, #2277b0, #00437c);\nbackground-image: -ms-linear-gradient(top, #2277b0, #00437c);\nbackground-image: -o-linear-gradient(top, #2277b0, #00437c);\nbackground-image: linear-gradient(top, #2277b0, #00437c);\n}\n\n.chatNoxPromotions .promotion-calltoaction a:hover, .chatNoxPromotions .promotion-calltoaction a:active {\ntext-shadow: 0 1px 0 #00437c;\nborder-color: #001049;\nbackground-color: #00437c;\nbackground-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2277b0), color-stop(100%, #002a63));\nbackground-image: -webkit-linear-gradient(top, #2277b0, #002a63);\nbackground-image: -moz-linear-gradient(top, #2277b0, #002a63);\nbackground-image: -ms-linear-gradient(top, #2277b0, #002a63);\nbackground-image: -o-linear-gradient(top, #2277b0, #002a63);\nbackground-image: linear-gradient(top, #2277b0, #002a63);\n}\n\n";
+  }
+
+function program11(depth0,data) {
+  
+  
+  return "\n\n.chatNoxPromotions .promotion-close {\n	 background-color: #222222;\ncolor: #f9f9f9;\ntext-shadow: 1px 1px #2f2f2f;\nborder-color: #666666;\n}\n.chatNoxPromotions .promotion-close:hover {\nbackground-color: #080808;\ncolor: #dfdfdf;\ntext-shadow: 1px 1px #151515;\n}\n.chatNoxPromotions .promotion-title {\n    color: #222222;\ntext-shadow: 1px 1px #ffffff;\n}\n.chatNoxPromotions .promotion-container {\n background-color: #f9f9f9;\nborder-color: #666666!important;\n}\n.chatNoxPromotions .promotion-body, .promotion-body * {\n color: #666666;\n}\n\n.chatNoxPromotions .promotion-calltoaction a {\ncolor: #ffffff;\ntext-shadow: 0 1px 0 #0d0d0d;\nborder-color: #000000;\nbackground-color: #0d0d0d;\nbackground-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #272727), color-stop(100%, #000000));\nbackground-image: -webkit-linear-gradient(top, #272727, #000000);\nbackground-image: -moz-linear-gradient(top, #272727, #000000);\nbackground-image: -ms-linear-gradient(top, #272727, #000000);\nbackground-image: -o-linear-gradient(top, #272727, #000000);\nbackground-image: linear-gradient(top, #272727, #000000);\n}\n\n.chatNoxPromotions .promotion-calltoaction a:hover, .chatNoxPromotions .promotion-calltoaction a:active {\ntext-shadow: 0 1px 0 #000000;\nborder-color: #000000;\nbackground-color: #000000;\nbackground-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #272727), color-stop(100%, #000000));\nbackground-image: -webkit-linear-gradient(top, #272727, #000000);\nbackground-image: -moz-linear-gradient(top, #272727, #000000);\nbackground-image: -ms-linear-gradient(top, #272727, #000000);\nbackground-image: -o-linear-gradient(top, #272727, #000000);\nbackground-image: linear-gradient(top, #272727, #000000);\n}\n\n";
+  }
+
+function program13(depth0,data) {
+  
+  
+  return "\n\n.chatNoxPromotions .promotion-close {\n	 background-color: #265e06;\ncolor: #dcfacb;\ntext-shadow: 1px 1px #336b13;\nborder-color: #022902;\n}\n.chatNoxPromotions .promotion-close:hover {\nbackground-color: #0c4400;\ncolor: #c2e0b1;\ntext-shadow: 1px 1px #19510d;\n}\n.chatNoxPromotions .promotion-title {\n    color: #265e06;\ntext-shadow: 1px 1px #e9ffd8;\n}\n.chatNoxPromotions .promotion-container {\n background-color: #dcfacb;\nborder-color: #022902!important;\n}\n\n.chatNoxPromotions .promotion-body, .promotion-body * {\n color: #111111;\n}\n\n.chatNoxPromotions .promotion-calltoaction a {\ncolor: #ffffff;\ntext-shadow: 0 1px 0 #265e06;\nborder-color: #002b00;\nbackground-color: #265e06;\nbackground-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #407820), color-stop(100%, #0c4400));\nbackground-image: -webkit-linear-gradient(top, #407820, #0c4400);\nbackground-image: -moz-linear-gradient(top, #407820, #0c4400);\nbackground-image: -ms-linear-gradient(top, #407820, #0c4400);\nbackground-image: -o-linear-gradient(top, #407820, #0c4400);\nbackground-image: linear-gradient(top, #407820, #0c4400);\n}\n\n.chatNoxPromotions .promotion-calltoaction a:hover, .chatNoxPromotions .promotion-calltoaction a:active {\ntext-shadow: 0 1px 0 #0c4400;\nborder-color: #001100;\nbackground-color: #0c4400;\nbackground-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #407820), color-stop(100%, #002b00));\nbackground-image: -webkit-linear-gradient(top, #407820, #002b00);\nbackground-image: -moz-linear-gradient(top, #407820, #002b00);\nbackground-image: -ms-linear-gradient(top, #407820, #002b00);\nbackground-image: -o-linear-gradient(top, #407820, #002b00);\nbackground-image: linear-gradient(top, #407820, #002b00);\n}\n\n";
+  }
+
+function program15(depth0,data) {
+  
+  
+  return "\n\n.chatNoxPromotions .promotion-close {\n	 background-color: #222222;\ncolor: #fff7ff;\ntext-shadow: 1px 1px #2f2f2f;\nborder-color: #666666;\n}\n.chatNoxPromotions .promotion-close:hover {\nbackground-color: #080808;\ncolor: #e5dde5;\ntext-shadow: 1px 1px #151515;\n}\n.chatNoxPromotions .promotion-title {\n    color: #222222;\ntext-shadow: 1px 1px #ffffff;\n}\n.chatNoxPromotions .promotion-container {\nbackground-color: #fff7ff;\nborder-color: #666666!important;\n}\n.chatNoxPromotions .promotion-body, .promotion-body * {\n color: #666666;\n}\n\n.chatNoxPromotions .promotion-calltoaction a {\ncolor: #ffffff;\ntext-shadow: 0 1px 0 #f708e7;\nborder-color: #c400b4;\nbackground-color: #f708e7;\nbackground-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff22ff), color-stop(100%, #dd00cd));\nbackground-image: -webkit-linear-gradient(top, #ff22ff, #dd00cd);\nbackground-image: -moz-linear-gradient(top, #ff22ff, #dd00cd);\nbackground-image: -ms-linear-gradient(top, #ff22ff, #dd00cd);\nbackground-image: -o-linear-gradient(top, #ff22ff, #dd00cd);\nbackground-image: linear-gradient(top, #ff22ff, #dd00cd);\n}\n\n.chatNoxPromotions .promotion-calltoaction a:hover, .chatNoxPromotions .promotion-calltoaction a:active {\ntext-shadow: 0 1px 0 #dd00cd;\nborder-color: #aa009a;\nbackground-color: #dd00cd;\nbackground-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff22ff), color-stop(100%, #c400b4));\nbackground-image: -webkit-linear-gradient(top, #ff22ff, #c400b4);\nbackground-image: -moz-linear-gradient(top, #ff22ff, #c400b4);\nbackground-image: -ms-linear-gradient(top, #ff22ff, #c400b4);\nbackground-image: -o-linear-gradient(top, #ff22ff, #c400b4);\nbackground-image: linear-gradient(top, #ff22ff, #c400b4);\n}\n\n";
+  }
+
+function program17(depth0,data) {
+  
+  
+  return "\n\n.chatNoxPromotions .promotion-close {\n	 background-color: #ffffff;\ncolor: #000000;\ntext-shadow: 1px 1px #ffffff;\nborder-color: #555555;\n}\n.chatNoxPromotions .promotion-close:hover {\nbackground-color: #e5e5e5;\ncolor: #000000;\ntext-shadow: 1px 1px #f2f2f2;\n}\n.chatNoxPromotions .promotion-title {\n   color: #ffffff;\ntext-shadow: 1px 1px #0d0d0d;\n}\n\n.chatNoxPromotions .promotion-body, .promotion-body * {\n color: #cccccc;\n}\n.chatNoxPromotions .promotion-powered-by a {\ncolor: #cccccc;\n}\n\n\n.chatNoxPromotions .promotion-container {\nbackground-color: #000000;\nborder-color: #555555!important;\n}\n\n\n\n.chatNoxPromotions .promotion-calltoaction a {\ncolor: #ffffff;\ntext-shadow: 0 1px 0 #1193ba;\nborder-color: #006087;\nbackground-color: #1193ba;\nbackground-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2badd4), color-stop(100%, #0079a0));\nbackground-image: -webkit-linear-gradient(top, #2badd4, #0079a0);\nbackground-image: -moz-linear-gradient(top, #2badd4, #0079a0);\nbackground-image: -ms-linear-gradient(top, #2badd4, #0079a0);\nbackground-image: -o-linear-gradient(top, #2badd4, #0079a0);\nbackground-image: linear-gradient(top, #2badd4, #0079a0);\n}\n\n.chatNoxPromotions .promotion-calltoaction a:hover, .chatNoxPromotions .promotion-calltoaction a:active {\ntext-shadow: 0 1px 0 #0079a0;\nborder-color: #00466d;\nbackground-color: #0079a0;\nbackground-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2badd4), color-stop(100%, #006087));\nbackground-image: -webkit-linear-gradient(top, #2badd4, #006087);\nbackground-image: -moz-linear-gradient(top, #2badd4, #006087);\nbackground-image: -ms-linear-gradient(top, #2badd4, #006087);\nbackground-image: -o-linear-gradient(top, #2badd4, #006087);\nbackground-image: linear-gradient(top, #2badd4, #006087);\n}\n\n";
+  }
+
+function program19(depth0,data) {
+  
+  
+  return "\n\n.chatNoxPromotions .promotion-close {\n	 background-color: #ffffff;\ncolor: #1a0d1a;\ntext-shadow: 1px 1px #ffffff;\nborder-color: #666666;\n}\n.chatNoxPromotions .promotion-close:hover {\nbackground-color: #e5e5e5;\ncolor: #000000;\ntext-shadow: 1px 1px #f2f2f2;\n}\n.chatNoxPromotions .promotion-title {\n   color: #ffffff;\ntext-shadow: 1px 1px #271a27;\n}\n\n.chatNoxPromotions .promotion-body, .promotion-body * {\n color: #ebe8eb;\n}\n.chatNoxPromotions .promotion-powered-by a {\ncolor: #ebe8eb;\n}\n\n.chatNoxPromotions .promotion-container {\nbackground-color: #1a0d1a;\nborder-color: #666666!important;\n}\n\n.chatNoxPromotions .promotion-calltoaction a {\ncolor: #ffffff;\ntext-shadow: 0 1px 0 #cc0c16;\nborder-color: #990000;\nbackground-color: #cc0c16;\nbackground-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e62630), color-stop(100%, #b20000));\nbackground-image: -webkit-linear-gradient(top, #e62630, #b20000);\nbackground-image: -moz-linear-gradient(top, #e62630, #b20000);\nbackground-image: -ms-linear-gradient(top, #e62630, #b20000);\nbackground-image: -o-linear-gradient(top, #e62630, #b20000);\nbackground-image: linear-gradient(top, #e62630, #b20000);\n}\n\n.chatNoxPromotions .promotion-calltoaction a:hover, .chatNoxPromotions .promotion-calltoaction a:active {\ntext-shadow: 0 1px 0 #b20000;\nborder-color: #7f0000;\nbackground-color: #b20000;\nbackground-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e62630), color-stop(100%, #990000));\nbackground-image: -webkit-linear-gradient(top, #e62630, #990000);\nbackground-image: -moz-linear-gradient(top, #e62630, #990000);\nbackground-image: -ms-linear-gradient(top, #e62630, #990000);\nbackground-image: -o-linear-gradient(top, #e62630, #990000);\nbackground-image: linear-gradient(top, #e62630, #990000);\n}\n\n";
+  }
+
+  buffer += "<div>\n<style type=\"text/css\">\n";
+  options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.theme_type), "cute-purple", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.theme_type), "cute-purple", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n\n";
+  options = {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.theme_type), "cool-blue", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.theme_type), "cool-blue", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n\n\n\n";
+  options = {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.theme_type), "classic", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.theme_type), "classic", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n\n\n";
+  options = {hash:{},inverse:self.noop,fn:self.program(7, program7, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.theme_type), "alerts", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.theme_type), "alerts", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n\n\n";
+  options = {hash:{},inverse:self.noop,fn:self.program(9, program9, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.theme_type), "marketing", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.theme_type), "marketing", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n\n";
+  options = {hash:{},inverse:self.noop,fn:self.program(11, program11, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.theme_type), "ninja", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.theme_type), "ninja", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += " \n\n";
+  options = {hash:{},inverse:self.noop,fn:self.program(13, program13, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.theme_type), "garden", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.theme_type), "garden", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n \n";
+  options = {hash:{},inverse:self.noop,fn:self.program(15, program15, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.theme_type), "pink", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.theme_type), "pink", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n\n";
+  options = {hash:{},inverse:self.noop,fn:self.program(17, program17, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.theme_type), "night", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.theme_type), "night", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n\n   \n";
+  options = {hash:{},inverse:self.noop,fn:self.program(19, program19, data),data:data};
+  stack2 = ((stack1 = helpers.chatnox_equal || (depth0 && depth0.chatnox_equal)),stack1 ? stack1.call(depth0, (depth0 && depth0.theme_type), "red-black", options) : helperMissing.call(depth0, "chatnox_equal", (depth0 && depth0.theme_type), "red-black", options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n\n</style>\n</div>\n";
+  return buffer;
+  });
+templates['chatnox-client-stickybar-success'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n       <a href=\"";
+  if (stack1 = helpers.target_link) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.target_link); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\" target=\"_BLANK\">";
+  if (stack1 = helpers.success_message_text) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.success_message_text); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</a>\n  ";
+  return buffer;
+  }
+
+function program3(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += " \n       ";
+  if (stack1 = helpers.success_message_text) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.success_message_text); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n  ";
+  return buffer;
+  }
+
+  buffer += "<p class=\"stickybar-sentence stickybar-final\">\n  ";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.add_target_link), {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "   \n</p>\n<p class=\"stickybar-powered\">\n	Powered by <a\n		href=\"https://www.chatnox.com/features/sticky-contact-bar-features.html?utm_source=stickybar-widget&utm_medium=marketing&utm_campaign=stickybar\"\n		target=\"_BLANK\">chatnox.com</a>\n</p>\n";
+  return buffer;
+  });
+templates['chatnox-client-stickybar'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "<div class=\"chatNoxStickybar\" id=\"stickybar-";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.id); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n	<div dir=\"ltr\" class=\"stickybar-wrapper\">\n		<div class=\"stickybar-container stickybar-";
+  if (stack1 = helpers['chatnox-stickybar-status']) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0['chatnox-stickybar-status']); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n			<a\n				href=\"https://www.chatnox.com/features/sticky-contact-bar-features.html?utm_source=stickybar-widget&utm_medium=marketing&utm_campaign=stickybar\"\n				class=\"stickybar-logo-title\" target=\"_blank\">\n				<div class=\"stickybar-logo\"\n					title=\"Free StickyBar Powered by chatnox.com, convert visitors into contacts and increase sales.\"></div>\n			</a>\n\n			<div class=\"stickybar-content\" style=\"display: inline-block;\">\n				<div class=\"stickybar-steps\">\n					<p class=\"stickybar-sentence\">";
+  if (stack1 = helpers.content) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.content); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</p>\n				</div>\n				<div class=\"stickybar-steps\">\n					<form class=\"stickybar-form-header\" onsubmit=\"return false;\">\n						<input type=\"email\" placeholder=\"Email\" id=\"chatnox-stickybar-email\" />\n						<button type=\"submit\" class=\"stickybar-save-button\" id=\"stickybar-email-submit-btn\">";
+  if (stack1 = helpers.button_text) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.button_text); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</button>\n					</form>\n				</div>\n			</div>\n			\n			<div class=\"stickybar-close-btn\" id=\"stickybar-close-btn\"> <i id=\"stickybar-arrow-up\" class=\"stickybar-icon-arrow-up\"><img src=\"https://www.chatnox.com/assets/up.png\" /></i> </div>\n			<div class=\"stickybar-open-btn\" id=\"stickybar-open-btn\"> <i class=\"stickybar-icon-arrow-down\"><img src=\"https://www.chatnox.com/assets/down.png\" /></i> </div>\n\n		</div>\n	</div>\n</div>\n\n<style type=\"text/css\">\n   .chatNoxStickybar .stickybar-container{\n  			color: #FFFFFF;\n			background: ";
+  if (stack1 = helpers.bar_bg_color) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.bar_bg_color); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "!important;\n			border-bottom: 2px solid ";
+  if (stack1 = helpers.bar_bg_color_luminus) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.bar_bg_color_luminus); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "!important;  		\n   }\n   \n  .chatNoxStickybar .stickybar-content .stickybar-save-button\n	{\n	background: ";
+  if (stack1 = helpers.button_bg_color) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.button_bg_color); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "!important;  \n	color: #FFFFFF !important;\n}\n\n.chatNoxStickybar .stickybar-content .stickybar-save-button:hover\n	{\n	background: ";
+  if (stack1 = helpers.button_bg_color_luminus) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.button_bg_color_luminus); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "!important;  \n}\n\n.chatNoxStickybar .stickybar-close-btn:hover{\n   background: ";
+  if (stack1 = helpers.bar_bg_color_luminus) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.bar_bg_color_luminus); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "!important;\n}\n\n.chatNoxStickybar .stickybar-open-btn:hover{\n   background: ";
+  if (stack1 = helpers.bar_bg_color_luminus) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.bar_bg_color_luminus); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "!important;\n}\n\n.chatNoxStickybar .stickybar-open-btn {\nbackground: ";
+  if (stack1 = helpers.bar_bg_color) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.bar_bg_color); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "!important;\n}\n.chatNoxStickybar .stickybar-open-btn:hover {\nbackground: ";
+  if (stack1 = helpers.button_bg_color) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.button_bg_color); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "!important;\n}\n\n.chatnox-push-html-css {\n     margin-top: 50px!important;\n}\n\n.chatnox-push-element-css {\n     top: 50px!important;\n}\n\n</style>\n\n\n";
+  return buffer;
+  });
+})();
